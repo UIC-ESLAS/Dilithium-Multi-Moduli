@@ -1,5 +1,6 @@
 # Revisiting Keccak and Dilithium Implementations on ARMv7-M
 This repository provides code for our implementations of Keccak and Dilithium using the improved Plantard arithmetic on two ARMv7-M microprocessors: ARM Cortex-M3 and Cortex-M4.
+
 Authors: 
  - [Junhao Huang](https://github.com/JunhaoHuang) `<huangjunhao@uic.edu.cn>`
  - [Alexandre Adomnicăi](https://github.com/aadomn) `<alexandre@adomnicai.me>`
@@ -80,7 +81,7 @@ It can then be flashed using:
 ```
 bossac -a --erase --write --verify --boot=1 --port=/dev/ttyACM0 bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
 ```
-### Example
+### Example on M3
 For building the `test` firmware for our m3plant version of `dilithium2` the following command can be used:
 ```
 # build
@@ -113,7 +114,7 @@ It can then be flashed using:
 ```
 st-flash --reset write bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin 0x8000000
 ```
-### Example
+### Example on M4
 
 For building the `test` firmware for our new version of `dilithium3` the following command can be used:
 ```
@@ -126,7 +127,7 @@ st-flash --reset write bin/crypto_sign_dilithium3_new_test.bin 0x8000000
 python3 read_guest.py
 ```
 
-### reference
+### References
 [AHKS22] Amin Abdulrahman, Vincent Hwang, Matthias J. Kannwischer, and Amber Sprenkels. Faster Kyber and Dilithium on the Cortex-M4. In Giuseppe Ateniese and Daniele Venturi, editors, Applied Cryptography and Network Security - 20th International Conference, ACNS 2022: 853-871.  
 [GKS20] Denisa O. C. Greconici, Matthias J. Kannwischer, and Amber Sprenkels. Compact Dilithium Implementations on Cortex-M3 and Cortex-M4. IACR Transactions on Cryptographic Hardware and Embedded Systems, 2021(1):1–24, Dec. 2020. 
 
@@ -138,7 +139,8 @@ Each subdirectory containing implementations contains a LICENSE or COPYING file 
 ### Citation
 
 Please cite our paper if you want to use this repository.
-@article{Huang2022Improved,  
+
+@article{Huang2023Revisit,  
 author = {Junhao Huang, Alexandre Adomnic\u{a}i, Jipeng Zhang, Wangchen Dai, Yao Liu, Ray C. C. Cheung, \c{C}etin Kaya Ko\c{c}, and Donglong Chen},  
 title = {Revisiting Keccak and Dilithium Implementations on ARMv7-M},  
 }
