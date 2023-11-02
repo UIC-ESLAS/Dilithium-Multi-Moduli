@@ -1,0 +1,9 @@
+[submodule "keccak"]
+	path = keccak
+	url = https://github.com/aadomn/keccak_armv7m
+[submodule "M3/libopencm3"]
+	path = M3/libopencm3
+	url = git@github.com:libopencm3/libopencm3.git
+[submodule "M4/libopencm3"]
+	path = M4/libopencm3
+	url = git@github.com:libopencm3/libopencm3.git
