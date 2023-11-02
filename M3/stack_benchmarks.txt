@@ -1,0 +1,272 @@
+% Stack Benchmarking measurements written on 2023-11-02 05:10:39.700470+00:00;
+
+%M3 results for crypto_sign_dilithium2_m3 (type=sign)
+\def\crypto_sign_dilithium2_m3keygen{38k}
+\def\crypto_sign_dilithium2_m3sign{53k}
+\def\crypto_sign_dilithium2_m3verify{36k}
+
+%M3 results for crypto_sign_dilithium2_m3plant (type=sign)
+\def\crypto_sign_dilithium2_m3plantkeygen{8\,604}
+\def\crypto_sign_dilithium2_m3plantsign{46k}
+\def\crypto_sign_dilithium2_m3plantverify{36k}
+
+%M3 results for crypto_sign_dilithium3_m3 (type=sign)
+\def\crypto_sign_dilithium3_m3keygen{61k}
+\def\crypto_sign_dilithium3_m3sign{80k}
+\def\crypto_sign_dilithium3_m3verify{58k}
+
+%M3 results for crypto_sign_dilithium3_m3plant (type=sign)
+\def\crypto_sign_dilithium3_m3plantkeygen{9\,628}
+\def\crypto_sign_dilithium3_m3plantsign{70k}
+\def\crypto_sign_dilithium3_m3plantverify{58k}
+
+
+% Stack Benchmarking measurements written on 2023-11-02 05:16:13.109145+00:00;
+
+% Stack Benchmarking measurements written on 2023-11-02 05:17:31.077247+00:00;
+
+% Stack Benchmarking measurements written on 2023-11-02 05:18:09.736720+00:00;
+
+% Stack Benchmarking measurements written on 2023-11-02 09:16:11.755802+00:00;
+
+% Stack Benchmarking measurements written on 2023-11-02 09:16:24.410448+00:00;
+
+%M3 results for crypto_kem_kyber512_m3 (type=kem)
+\def\crypto_kem_kyber512_m3keygen{2\,464}
+\def\crypto_kem_kyber512_m3encaps{2\,176}
+\def\crypto_kem_kyber512_m3decaps{2\,192}
+
+%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
+\def\crypto_kem_kyber512_m3fspeedkeygen{3\,240}
+\def\crypto_kem_kyber512_m3fspeedencaps{3\,712}
+\def\crypto_kem_kyber512_m3fspeeddecaps{3\,720}
+
+%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
+\def\crypto_kem_kyber512_m3fstackkeygen{2\,464}
+\def\crypto_kem_kyber512_m3fstackencaps{2\,176}
+\def\crypto_kem_kyber512_m3fstackdecaps{2\,192}
+
+%M3 results for crypto_kem_kyber768_m3 (type=kem)
+\def\crypto_kem_kyber768_m3keygen{2\,688}
+\def\crypto_kem_kyber768_m3encaps{2\,640}
+\def\crypto_kem_kyber768_m3decaps{2\,656}
+
+%M3 results for crypto_kem_kyber768_m3fspeed (type=kem)
+\def\crypto_kem_kyber768_m3fspeedkeygen{4\,008}
+\def\crypto_kem_kyber768_m3fspeedencaps{4\,472}
+\def\crypto_kem_kyber768_m3fspeeddecaps{4\,488}
+
+%M3 results for crypto_kem_kyber768_m3fstack (type=kem)
+\def\crypto_kem_kyber768_m3fstackkeygen{2\,688}
+\def\crypto_kem_kyber768_m3fstackencaps{2\,640}
+\def\crypto_kem_kyber768_m3fstackdecaps{2\,656}
+
+%M3 results for crypto_kem_kyber1024_m3 (type=kem)
+\def\crypto_kem_kyber1024_m3keygen{3\,592}
+\def\crypto_kem_kyber1024_m3encaps{3\,208}
+\def\crypto_kem_kyber1024_m3decaps{3\,216}
+
+%M3 results for crypto_kem_kyber1024_m3fspeed (type=kem)
+\def\crypto_kem_kyber1024_m3fspeedkeygen{5\,160}
+\def\crypto_kem_kyber1024_m3fspeedencaps{5\,232}
+\def\crypto_kem_kyber1024_m3fspeeddecaps{5\,240}
+
+%M3 results for crypto_kem_kyber1024_m3fstack (type=kem)
+\def\crypto_kem_kyber1024_m3fstackkeygen{3\,592}
+\def\crypto_kem_kyber1024_m3fstackencaps{3\,208}
+\def\crypto_kem_kyber1024_m3fstackdecaps{3\,216}
+
+%M3 results for crypto_kem_kyber512-90s_m3 (type=kem)
+\def\crypto_kem_kyber51290s_m3keygen{3\,076}
+\def\crypto_kem_kyber51290s_m3encaps{2\,820}
+\def\crypto_kem_kyber51290s_m3decaps{2\,836}
+
+%M3 results for crypto_kem_kyber512-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber51290s_m3fspeedkeygen{3\,900}
+\def\crypto_kem_kyber51290s_m3fspeedencaps{4\,364}
+\def\crypto_kem_kyber51290s_m3fspeeddecaps{4\,372}
+
+%M3 results for crypto_kem_kyber512-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber51290s_m3fstackkeygen{3\,076}
+\def\crypto_kem_kyber51290s_m3fstackencaps{2\,820}
+\def\crypto_kem_kyber51290s_m3fstackdecaps{2\,836}
+
+%M3 results for crypto_kem_kyber768-90s_m3 (type=kem)
+\def\crypto_kem_kyber76890s_m3keygen{3\,396}
+\def\crypto_kem_kyber76890s_m3encaps{3\,340}
+\def\crypto_kem_kyber76890s_m3decaps{3\,348}
+
+%M3 results for crypto_kem_kyber768-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber76890s_m3fspeedkeygen{4\,700}
+\def\crypto_kem_kyber76890s_m3fspeedencaps{5\,156}
+\def\crypto_kem_kyber76890s_m3fspeeddecaps{5\,172}
+
+%M3 results for crypto_kem_kyber768-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber76890s_m3fstackkeygen{3\,396}
+\def\crypto_kem_kyber76890s_m3fstackencaps{3\,340}
+\def\crypto_kem_kyber76890s_m3fstackdecaps{3\,348}
+
+%M3 results for crypto_kem_kyber1024-90s_m3 (type=kem)
+\def\crypto_kem_kyber102490s_m3keygen{4\,608}
+\def\crypto_kem_kyber102490s_m3encaps{3\,860}
+\def\crypto_kem_kyber102490s_m3decaps{3\,868}
+
+%M3 results for crypto_kem_kyber1024-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber102490s_m3fspeedkeygen{6\,556}
+\def\crypto_kem_kyber102490s_m3fspeedencaps{5\,948}
+\def\crypto_kem_kyber102490s_m3fspeeddecaps{5\,956}
+
+%M3 results for crypto_kem_kyber1024-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber102490s_m3fstackkeygen{4\,608}
+\def\crypto_kem_kyber102490s_m3fstackencaps{3\,860}
+\def\crypto_kem_kyber102490s_m3fstackdecaps{3\,868}
+
+%M3 results for crypto_sign_dilithium2_m3 (type=sign)
+\def\crypto_sign_dilithium2_m3keygen{38k}
+\def\crypto_sign_dilithium2_m3sign{53k}
+\def\crypto_sign_dilithium2_m3verify{36k}
+
+%M3 results for crypto_sign_dilithium2_m3plant (type=sign)
+\def\crypto_sign_dilithium2_m3plantkeygen{8\,604}
+\def\crypto_sign_dilithium2_m3plantsign{46k}
+\def\crypto_sign_dilithium2_m3plantverify{36k}
+
+%M3 results for crypto_sign_dilithium3_m3 (type=sign)
+\def\crypto_sign_dilithium3_m3keygen{61k}
+\def\crypto_sign_dilithium3_m3sign{80k}
+\def\crypto_sign_dilithium3_m3verify{58k}
+
+%M3 results for crypto_sign_dilithium3_m3plant (type=sign)
+\def\crypto_sign_dilithium3_m3plantkeygen{9\,628}
+\def\crypto_sign_dilithium3_m3plantsign{70k}
+\def\crypto_sign_dilithium3_m3plantverify{58k}
+
+% Stack Benchmarking measurements written on 2023-11-02 09:27:48.436152+00:00;
+
+%M3 results for crypto_kem_kyber512_m3 (type=kem)
+\def\crypto_kem_kyber512_m3keygen{2\,464}
+\def\crypto_kem_kyber512_m3encaps{2\,176}
+\def\crypto_kem_kyber512_m3decaps{2\,192}
+
+%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
+\def\crypto_kem_kyber512_m3fspeedkeygen{3\,240}
+\def\crypto_kem_kyber512_m3fspeedencaps{3\,712}
+\def\crypto_kem_kyber512_m3fspeeddecaps{3\,720}
+
+%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
+\def\crypto_kem_kyber512_m3fstackkeygen{2\,464}
+\def\crypto_kem_kyber512_m3fstackencaps{2\,176}
+\def\crypto_kem_kyber512_m3fstackdecaps{2\,192}
+
+%M3 results for crypto_kem_kyber768_m3 (type=kem)
+\def\crypto_kem_kyber768_m3keygen{2\,688}
+\def\crypto_kem_kyber768_m3encaps{2\,640}
+\def\crypto_kem_kyber768_m3decaps{2\,656}
+
+%M3 results for crypto_kem_kyber768_m3fspeed (type=kem)
+\def\crypto_kem_kyber768_m3fspeedkeygen{4\,008}
+\def\crypto_kem_kyber768_m3fspeedencaps{4\,472}
+\def\crypto_kem_kyber768_m3fspeeddecaps{4\,488}
+
+%M3 results for crypto_kem_kyber768_m3fstack (type=kem)
+\def\crypto_kem_kyber768_m3fstackkeygen{2\,688}
+\def\crypto_kem_kyber768_m3fstackencaps{2\,640}
+\def\crypto_kem_kyber768_m3fstackdecaps{2\,656}
+
+%M3 results for crypto_kem_kyber1024_m3 (type=kem)
+\def\crypto_kem_kyber1024_m3keygen{3\,592}
+\def\crypto_kem_kyber1024_m3encaps{3\,208}
+\def\crypto_kem_kyber1024_m3decaps{3\,216}
+
+%M3 results for crypto_kem_kyber1024_m3fspeed (type=kem)
+\def\crypto_kem_kyber1024_m3fspeedkeygen{5\,160}
+\def\crypto_kem_kyber1024_m3fspeedencaps{5\,232}
+\def\crypto_kem_kyber1024_m3fspeeddecaps{5\,240}
+
+%M3 results for crypto_kem_kyber1024_m3fstack (type=kem)
+\def\crypto_kem_kyber1024_m3fstackkeygen{3\,592}
+\def\crypto_kem_kyber1024_m3fstackencaps{3\,208}
+\def\crypto_kem_kyber1024_m3fstackdecaps{3\,216}
+
+%M3 results for crypto_kem_kyber512-90s_m3 (type=kem)
+\def\crypto_kem_kyber51290s_m3keygen{3\,076}
+\def\crypto_kem_kyber51290s_m3encaps{2\,820}
+\def\crypto_kem_kyber51290s_m3decaps{2\,836}
+
+%M3 results for crypto_kem_kyber512-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber51290s_m3fspeedkeygen{3\,900}
+\def\crypto_kem_kyber51290s_m3fspeedencaps{4\,364}
+\def\crypto_kem_kyber51290s_m3fspeeddecaps{4\,372}
+
+%M3 results for crypto_kem_kyber512-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber51290s_m3fstackkeygen{3\,076}
+\def\crypto_kem_kyber51290s_m3fstackencaps{2\,820}
+\def\crypto_kem_kyber51290s_m3fstackdecaps{2\,836}
+
+%M3 results for crypto_kem_kyber768-90s_m3 (type=kem)
+\def\crypto_kem_kyber76890s_m3keygen{3\,396}
+\def\crypto_kem_kyber76890s_m3encaps{3\,340}
+\def\crypto_kem_kyber76890s_m3decaps{3\,348}
+
+%M3 results for crypto_kem_kyber768-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber76890s_m3fspeedkeygen{4\,700}
+\def\crypto_kem_kyber76890s_m3fspeedencaps{5\,156}
+\def\crypto_kem_kyber76890s_m3fspeeddecaps{5\,172}
+
+%M3 results for crypto_kem_kyber768-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber76890s_m3fstackkeygen{3\,396}
+\def\crypto_kem_kyber76890s_m3fstackencaps{3\,340}
+\def\crypto_kem_kyber76890s_m3fstackdecaps{3\,348}
+
+%M3 results for crypto_kem_kyber1024-90s_m3 (type=kem)
+\def\crypto_kem_kyber102490s_m3keygen{4\,608}
+\def\crypto_kem_kyber102490s_m3encaps{3\,860}
+\def\crypto_kem_kyber102490s_m3decaps{3\,868}
+
+%M3 results for crypto_kem_kyber1024-90s_m3fspeed (type=kem)
+\def\crypto_kem_kyber102490s_m3fspeedkeygen{6\,556}
+\def\crypto_kem_kyber102490s_m3fspeedencaps{5\,948}
+\def\crypto_kem_kyber102490s_m3fspeeddecaps{5\,956}
+
+%M3 results for crypto_kem_kyber1024-90s_m3fstack (type=kem)
+\def\crypto_kem_kyber102490s_m3fstackkeygen{4\,608}
+\def\crypto_kem_kyber102490s_m3fstackencaps{3\,860}
+\def\crypto_kem_kyber102490s_m3fstackdecaps{3\,868}
+
+%M3 results for crypto_sign_dilithium2_m3 (type=sign)
+\def\crypto_sign_dilithium2_m3keygen{38k}
+\def\crypto_sign_dilithium2_m3sign{53k}
+\def\crypto_sign_dilithium2_m3verify{36k}
+
+%M3 results for crypto_sign_dilithium2_m3plant (type=sign)
+\def\crypto_sign_dilithium2_m3plantkeygen{8\,604}
+\def\crypto_sign_dilithium2_m3plantsign{46k}
+\def\crypto_sign_dilithium2_m3plantverify{36k}
+
+%M3 results for crypto_sign_dilithium3_m3 (type=sign)
+\def\crypto_sign_dilithium3_m3keygen{61k}
+\def\crypto_sign_dilithium3_m3sign{80k}
+\def\crypto_sign_dilithium3_m3verify{58k}
+
+%M3 results for crypto_sign_dilithium3_m3plant (type=sign)
+\def\crypto_sign_dilithium3_m3plantkeygen{9\,628}
+\def\crypto_sign_dilithium3_m3plantsign{70k}
+\def\crypto_sign_dilithium3_m3plantverify{58k}
+
+% Stack Benchmarking measurements written on 2023-11-02 11:40:51.613430+00:00;
+
+%M3 results for crypto_kem_kyber512_m3 (type=kem)
+\def\crypto_kem_kyber512_m3keygen{2\,464}
+\def\crypto_kem_kyber512_m3encaps{2\,176}
+\def\crypto_kem_kyber512_m3decaps{2\,192}
+
+%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
+\def\crypto_kem_kyber512_m3fspeedkeygen{3\,240}
+\def\crypto_kem_kyber512_m3fspeedencaps{3\,712}
+\def\crypto_kem_kyber512_m3fspeeddecaps{3\,720}
+
+%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
+\def\crypto_kem_kyber512_m3fstackkeygen{2\,464}
+\def\crypto_kem_kyber512_m3fstackencaps{2\,176}
+\def\crypto_kem_kyber512_m3fstackdecaps{2\,192}
+

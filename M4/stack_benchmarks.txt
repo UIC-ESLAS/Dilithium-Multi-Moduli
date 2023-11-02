@@ -1,0 +1,186 @@
+% Stack Benchmarking measurements written on 2022-10-16 11:03:32.047925+00:00;
+
+%M4 results for crypto_kem_kyber512_old (type=kem)
+\DefineVar{crypto_kem_kyber512_oldkeygen_stack_usage}{2\,464}
+\DefineVar{crypto_kem_kyber512_oldencaps_stack_usage}{2\,168}
+\DefineVar{crypto_kem_kyber512_olddecaps_stack_usage}{2\,184}
+
+%M4 results for crypto_kem_kyber512_newstack (type=kem)
+\DefineVar{crypto_kem_kyber512_newstackkeygen_stack_usage}{2\,640}
+\DefineVar{crypto_kem_kyber512_newstackencaps_stack_usage}{2\,172}
+\DefineVar{crypto_kem_kyber512_newstackdecaps_stack_usage}{2\,188}
+
+%M4 results for crypto_kem_kyber768_old (type=kem)
+\DefineVar{crypto_kem_kyber768_oldkeygen_stack_usage}{2\,696}
+\DefineVar{crypto_kem_kyber768_oldencaps_stack_usage}{2\,640}
+\DefineVar{crypto_kem_kyber768_olddecaps_stack_usage}{2\,656}
+
+%M4 results for crypto_kem_kyber768_newstack (type=kem)
+\DefineVar{crypto_kem_kyber768_newstackkeygen_stack_usage}{3\,088}
+\DefineVar{crypto_kem_kyber768_newstackencaps_stack_usage}{2\,692}
+\DefineVar{crypto_kem_kyber768_newstackdecaps_stack_usage}{2\,708}
+
+%M4 results for crypto_kem_kyber1024_old (type=kem)
+\DefineVar{crypto_kem_kyber1024_oldkeygen_stack_usage}{3\,584}
+\DefineVar{crypto_kem_kyber1024_oldencaps_stack_usage}{3\,208}
+\DefineVar{crypto_kem_kyber1024_olddecaps_stack_usage}{3\,224}
+
+%M4 results for crypto_kem_kyber1024_newstack (type=kem)
+\DefineVar{crypto_kem_kyber1024_newstackkeygen_stack_usage}{3\,608}
+\DefineVar{crypto_kem_kyber1024_newstackencaps_stack_usage}{3\,268}
+\DefineVar{crypto_kem_kyber1024_newstackdecaps_stack_usage}{3\,284}
+
+%M4 results for crypto_kem_nttru (type=kem)
+\DefineVar{crypto_kem_nttrukeygen_stack_usage}{9\,372}
+\DefineVar{crypto_kem_nttruencaps_stack_usage}{7\,452}
+\DefineVar{crypto_kem_nttrudecaps_stack_usage}{8\,816}
+
+% Stack Benchmarking measurements written on 2023-07-27 09:48:06.364668+00:00;
+
+% Stack Benchmarking measurements written on 2023-07-27 09:48:43.596289+00:00;
+
+% Stack Benchmarking measurements written on 2023-07-27 09:49:55.058440+00:00;
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\DefineVar{crypto_sign_dilithium2_oldkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_oldsign_stack_usage}{50k}
+\DefineVar{crypto_sign_dilithium2_oldverify_stack_usage}{36k}
+
+%M4 results for crypto_sign_dilithium2_new (type=sign)
+\DefineVar{crypto_sign_dilithium2_newkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_newsign_stack_usage}{46k}
+\DefineVar{crypto_sign_dilithium2_newverify_stack_usage}{36k}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\DefineVar{crypto_sign_dilithium3_oldkeygen_stack_usage}{9\,564}
+\DefineVar{crypto_sign_dilithium3_oldsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_oldverify_stack_usage}{58k}
+
+%M4 results for crypto_sign_dilithium3_new (type=sign)
+\DefineVar{crypto_sign_dilithium3_newkeygen_stack_usage}{9\,564}
+\DefineVar{crypto_sign_dilithium3_newsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_newverify_stack_usage}{58k}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\DefineVar{crypto_sign_dilithium5_oldkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_oldsign_stack_usage}{117k}
+\DefineVar{crypto_sign_dilithium5_oldverify_stack_usage}{93k}
+
+%M4 results for crypto_sign_dilithium5_new (type=sign)
+\DefineVar{crypto_sign_dilithium5_newkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_newsign_stack_usage}{109k}
+\DefineVar{crypto_sign_dilithium5_newverify_stack_usage}{93k}
+
+% Stack Benchmarking measurements written on 2023-07-27 10:53:09.649796+00:00;
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\DefineVar{crypto_sign_dilithium2_oldkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_oldsign_stack_usage}{50k}
+\DefineVar{crypto_sign_dilithium2_oldverify_stack_usage}{36k}
+
+%M4 results for crypto_sign_dilithium2_new (type=sign)
+\DefineVar{crypto_sign_dilithium2_newkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_newsign_stack_usage}{46k}
+\DefineVar{crypto_sign_dilithium2_newverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\DefineVar{crypto_sign_dilithium3_oldkeygen_stack_usage}{9\,564}
+\DefineVar{crypto_sign_dilithium3_oldsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_oldverify_stack_usage}{58k}
+
+%M4 results for crypto_sign_dilithium3_new (type=sign)
+\DefineVar{crypto_sign_dilithium3_newkeygen_stack_usage}{9\,572}
+\DefineVar{crypto_sign_dilithium3_newsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_newverify_stack_usage}{9\,968}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\DefineVar{crypto_sign_dilithium5_oldkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_oldsign_stack_usage}{117k}
+\DefineVar{crypto_sign_dilithium5_oldverify_stack_usage}{93k}
+
+%M4 results for crypto_sign_dilithium5_new (type=sign)
+\DefineVar{crypto_sign_dilithium5_newkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_newsign_stack_usage}{109k}
+\DefineVar{crypto_sign_dilithium5_newverify_stack_usage}{12\,016}
+
+% Stack Benchmarking measurements written on 2023-07-27 10:59:30.754543+00:00;
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\DefineVar{crypto_sign_dilithium2_oldkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_oldsign_stack_usage}{50k}
+\DefineVar{crypto_sign_dilithium2_oldverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium2_new (type=sign)
+\DefineVar{crypto_sign_dilithium2_newkeygen_stack_usage}{8\,648}
+\DefineVar{crypto_sign_dilithium2_newsign_stack_usage}{46k}
+\DefineVar{crypto_sign_dilithium2_newverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\DefineVar{crypto_sign_dilithium3_oldkeygen_stack_usage}{9\,680}
+\DefineVar{crypto_sign_dilithium3_oldsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_oldverify_stack_usage}{9\,860}
+
+%M4 results for crypto_sign_dilithium3_new (type=sign)
+\DefineVar{crypto_sign_dilithium3_newkeygen_stack_usage}{9\,572}
+\DefineVar{crypto_sign_dilithium3_newsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_newverify_stack_usage}{9\,860}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\DefineVar{crypto_sign_dilithium5_oldkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_oldsign_stack_usage}{117k}
+\DefineVar{crypto_sign_dilithium5_oldverify_stack_usage}{11\,908}
+
+%M4 results for crypto_sign_dilithium5_new (type=sign)
+\DefineVar{crypto_sign_dilithium5_newkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_newsign_stack_usage}{109k}
+\DefineVar{crypto_sign_dilithium5_newverify_stack_usage}{11\,908}
+
+% Stack Benchmarking measurements written on 2023-08-08 12:04:40.426810+00:00;
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\DefineVar{crypto_sign_dilithium2_oldkeygen_stack_usage}{8\,608}
+\DefineVar{crypto_sign_dilithium2_oldsign_stack_usage}{50k}
+\DefineVar{crypto_sign_dilithium2_oldverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium2_new (type=sign)
+\DefineVar{crypto_sign_dilithium2_newkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_newsign_stack_usage}{46k}
+\DefineVar{crypto_sign_dilithium2_newverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\DefineVar{crypto_sign_dilithium3_oldkeygen_stack_usage}{9\,680}
+\DefineVar{crypto_sign_dilithium3_oldsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_oldverify_stack_usage}{9\,860}
+
+% Stack Benchmarking measurements written on 2023-08-08 12:29:18.201824+00:00;
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\DefineVar{crypto_sign_dilithium2_oldkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_oldsign_stack_usage}{50k}
+\DefineVar{crypto_sign_dilithium2_oldverify_stack_usage}{8\,892}
+
+%M4 results for crypto_sign_dilithium2_new (type=sign)
+\DefineVar{crypto_sign_dilithium2_newkeygen_stack_usage}{8\,540}
+\DefineVar{crypto_sign_dilithium2_newsign_stack_usage}{46k}
+\DefineVar{crypto_sign_dilithium2_newverify_stack_usage}{10\,748}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\DefineVar{crypto_sign_dilithium3_oldkeygen_stack_usage}{9\,572}
+\DefineVar{crypto_sign_dilithium3_oldsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_oldverify_stack_usage}{9\,860}
+
+%M4 results for crypto_sign_dilithium3_new (type=sign)
+\DefineVar{crypto_sign_dilithium3_newkeygen_stack_usage}{9\,572}
+\DefineVar{crypto_sign_dilithium3_newsign_stack_usage}{70k}
+\DefineVar{crypto_sign_dilithium3_newverify_stack_usage}{11\,780}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\DefineVar{crypto_sign_dilithium5_oldkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_oldsign_stack_usage}{117k}
+\DefineVar{crypto_sign_dilithium5_oldverify_stack_usage}{11\,908}
+
+%M4 results for crypto_sign_dilithium5_new (type=sign)
+\DefineVar{crypto_sign_dilithium5_newkeygen_stack_usage}{11\,620}
+\DefineVar{crypto_sign_dilithium5_newsign_stack_usage}{109k}
+\DefineVar{crypto_sign_dilithium5_newverify_stack_usage}{13\,936}
+
