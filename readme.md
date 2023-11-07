@@ -41,6 +41,10 @@ The setups for testing and evaluating of our code are based on the framework pro
       - `stack.c`: From pqm3; Firmware for benchmarking the schemes' stack usage. Can be used by using `stack_benchmarks.py`.
       - `test.c`: From pqm3; Firmware for self-testing the schemes. Can be used by using `test.py`.
       - `testvectors.c`: From pqm3; Firmware for computing testvectors for Dilithium only.
+  - `ldscripts`: Linker script for sam3x8e.
+  - `benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
+  - `f_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `f_speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
+  - `stack_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `stack.c`. The desired algorithms as well as the number of iterations can be set in the code.
 - `M4`: contains code for Dilithium on ARM Cortex-M4
   - `common`: contains code that is shared between different schemes
   - `config.py`: Saves platform configuration
