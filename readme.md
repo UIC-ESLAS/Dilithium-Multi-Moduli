@@ -25,6 +25,8 @@ The setups for testing and evaluating of our code are based on the framework pro
 - `keccak`: contains code for Keccak on ARMv7-M by Alexandre Adomnicăi
 - `M3`: contains code for Dilithium on ARM Cortex-M3
   - `common`: contains code that is shared between different schemes
+    - `keccak1600.S`: the proposed keccak implementation
+    - `keccak1600_XKCP.S`: the XKCP keccak implementation
   - `config.py`: Saves platform configuration
   - `crypto_sign`: contains the implementations for dilithium2, dilithium3, and dilithium5
       - `dilithium2`
@@ -47,12 +49,14 @@ The setups for testing and evaluating of our code are based on the framework pro
   - `stack_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `stack.c`. The desired algorithms as well as the number of iterations can be set in the code.
 - `M4`: contains code for Dilithium on ARM Cortex-M4
   - `common`: contains code that is shared between different schemes
+    - `keccak1600.S`: the proposed keccak implementation
+    - `keccak1600_XKCP.S`: the XKCP keccak implementation
   - `config.py`: Saves platform configuration
   - `crypto_sign`: contains the implementations for dilithium2, dilithium3, and dilithium5
       - `dilithium2`
           - `old`: Code in [AHKS22]
       - `dilithium3`
-          - `new`: Our code with the improved Plantard arithmetic based on the implementation in [AHKS22].
+          - `m4plant`: Our code with the improved Plantard arithmetic based on the implementation in [AHKS22].
           - `old`: Code in [AHKS22]
       - `dilithium5`
           - `old`: Code in [AHKS22]
@@ -130,6 +134,16 @@ st-flash --reset write bin/crypto_sign_dilithium3_new_test.bin 0x8000000
 # Get output:
 python3 read_guest.py
 ```
+
+<!-- TODO -->
+## Code size
+The code size of the implementation is evaluated with the `arm-none-eabi-size`.
+
+```
+arm-none-eabi-size -t {binary_file}
+```
+Use `code_size.py` to evaluate the code size of the specific implementation.
+
 
 ### References
 [AHKS22] Amin Abdulrahman, Vincent Hwang, Matthias J. Kannwischer, and Amber Sprenkels. Faster Kyber and Dilithium on the Cortex-M4. In Giuseppe Ateniese and Daniele Venturi, editors, Applied Cryptography and Network Security - 20th International Conference, ACNS 2022: 853-871.  

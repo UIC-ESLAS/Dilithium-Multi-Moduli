@@ -44,7 +44,15 @@ LDFLAGS_HOST = -lm
 
 COMMONSOURCES= common/fips202.c common/sha2.c common/crypto_hashblocks_sha512.c common/aes-publicinputs.c common/aes.c
 COMMONSOURCES_HOST=$(COMMONSOURCES) common/keccakf1600.c
-COMMONSOURCES_M4=$(COMMONSOURCES) common/keccakf1600.S common/aes-encrypt.S common/aes-publicinputs.S common/aes-keyschedule.S common/crypto_hashblocks_sha512_inner32.s
+COMMONSOURCES_M4=$(COMMONSOURCES) common/aes-encrypt.S common/aes-publicinputs.S common/aes-keyschedule.S common/crypto_hashblocks_sha512_inner32.s
+ifndef KECCAK
+KECCAK=1
+endif
+ifeq ($(KECCAK),1) # default using the proposed Keccak implementation.
+COMMONSOURCES_M4+=common/keccakf1600.S
+else
+COMMONSOURCES_M4+=common/keccakf1600_XKCP.S
+endif
 
 COMMONINCLUDES_M4=$(COMMONINCLUDES) -I"common"
 

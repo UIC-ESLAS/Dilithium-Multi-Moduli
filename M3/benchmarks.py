@@ -123,10 +123,10 @@ with open(f"benchmarks.txt", "a") as outfile:
     # uncomment the scheme variants that should be build and evaluated
     for scheme_path in [
         "crypto_sign/dilithium2/m3",
-        "crypto_sign/dilithium2/m3plant",
+        # "crypto_sign/dilithium2/m3plant",
         "crypto_sign/dilithium3/m3",
-        "crypto_sign/dilithium3/m3plant",
-        "crypto_sign/dilithium5/m3plant"
+        # "crypto_sign/dilithium3/m3plant",
+        # "crypto_sign/dilithium5/m3plant"
     ]:
         scheme_name = scheme_path.replace("/", "_")
         scheme_type = re.search('crypto_(.*?)_', scheme_name).group(1)

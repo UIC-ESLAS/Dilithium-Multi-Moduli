@@ -30,7 +30,7 @@ CFLAGS     += -Wall -Wextra -Wimplicit-function-declaration \
               -fno-common $(ARCH_FLAGS) -MD $(DEFINES)
               
 CFLAGS_DEBUG     = -O0 -g $(CFLAGS)
-CFLAGS += -O3 -flto
+CFLAGS += -O3
 
 CC_HOST    = gcc
 LD_HOST    = gcc
@@ -44,7 +44,16 @@ LDFLAGS_HOST = -lm
 
 COMMONSOURCES= common/fips202.c common/sha2.c common/crypto_hashblocks_sha512.c common/aes-publicinputs.c common/aes.c
 COMMONSOURCES_HOST=$(COMMONSOURCES) common/keccakf1600.c
-COMMONSOURCES_M3=$(COMMONSOURCES) common/keccakf1600.S common/aes-encrypt.S common/aes-publicinputs.S common/aes-keyschedule.S common/crypto_hashblocks_sha512_m3_inner32.S
+COMMONSOURCES_M3=$(COMMONSOURCES) common/aes-encrypt.S common/aes-publicinputs.S common/aes-keyschedule.S common/crypto_hashblocks_sha512_m3_inner32.S
+
+ifndef KECCAK
+KECCAK=1
+endif
+ifeq ($(KECCAK),1) # default using the proposed Keccak implementation.
+COMMONSOURCES_M3+=common/keccakf1600.S
+else
+COMMONSOURCES_M3+=common/keccakf1600_XKCP.S
+endif
 
 COMMONINCLUDES_M3=$(COMMONINCLUDES) -I"common"
 
@@ -147,8 +156,8 @@ $(OPENCM3FILE):
 .PHONY: clean libclean
 
 clean:
-	rm -rf elf/
 	rm -rf bin/
+	rm -rf elf/
 	rm -rf bin-host/
 	rm -rf obj/
 	rm -rf testvectors/

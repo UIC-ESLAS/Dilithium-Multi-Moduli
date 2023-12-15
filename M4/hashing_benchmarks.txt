@@ -1,6 +1,7 @@
 % Benchmarking measurements written on 2023-09-28 06:24:25.911911+00:00; iterations=1000
 
 %M4 hash profiling results for crypto_sign_dilithium2_old (type=sign)
+% with XKCP keccak
 \def\crypto_sign_dilithium2_oldkeygen{1\,595k}
 \def\crypto_sign_dilithium2_oldkeygen_hash{1\,331k}
 \def\crypto_sign_dilithium2_oldsign{4\,052k}
@@ -34,7 +35,7 @@
 \def\crypto_sign_dilithium5_oldverify_hash_profile{84.69}
 
 % Benchmarking measurements written on 2023-09-28 06:51:59.548878+00:00; iterations=1000
-
+% with the proposed keccak
 %M4 hash profiling results for crypto_sign_dilithium2_old (type=sign)
 \def\crypto_sign_dilithium2_oldkeygen{1\,357k}
 \def\crypto_sign_dilithium2_oldkeygen_hash{1\,093k}
@@ -46,16 +47,16 @@
 \def\crypto_sign_dilithium2_oldsign_hash_profile{60.02}
 \def\crypto_sign_dilithium2_oldverify_hash_profile{77.2}
 
-%M4 hash profiling results for crypto_sign_dilithium3_new (type=sign)
-\def\crypto_sign_dilithium3_newkeygen{2\,394k}
-\def\crypto_sign_dilithium3_newkeygen_hash{1\,985k}
-\def\crypto_sign_dilithium3_newsign{5\,574k}
-\def\crypto_sign_dilithium3_newsign_hash{3\,287k}
-\def\crypto_sign_dilithium3_newverify{2\,302k}
-\def\crypto_sign_dilithium3_newverify_hash{1\,832k}
-\def\crypto_sign_dilithium3_newkeygen_hash_profile{82.92}
-\def\crypto_sign_dilithium3_newsign_hash_profile{58.97}
-\def\crypto_sign_dilithium3_newverify_hash_profile{79.61}
+%M4 hash profiling results for crypto_sign_dilithium3_m4plant (type=sign)
+\def\crypto_sign_dilithium3_m4plantkeygen{2\,394k}
+\def\crypto_sign_dilithium3_m4plantkeygen_hash{1\,985k}
+\def\crypto_sign_dilithium3_m4plantsign{5\,574k}
+\def\crypto_sign_dilithium3_m4plantsign_hash{3\,287k}
+\def\crypto_sign_dilithium3_m4plantverify{2\,302k}
+\def\crypto_sign_dilithium3_m4plantverify_hash{1\,832k}
+\def\crypto_sign_dilithium3_m4plantkeygen_hash_profile{82.92}
+\def\crypto_sign_dilithium3_m4plantsign_hash_profile{58.97}
+\def\crypto_sign_dilithium3_m4plantverify_hash_profile{79.61}
 
 %M4 hash profiling results for crypto_sign_dilithium5_old (type=sign)
 \def\crypto_sign_dilithium5_oldkeygen{4\,069k}
@@ -73,6 +74,7 @@
 % Benchmarking measurements written on 2023-09-28 07:20:57.420022+00:00; iterations=1000
 
 %M4 hash profiling results for crypto_kem_kyber512_m4fspeed (type=kem)
+% with the proposed keccak
 \def\crypto_kem_kyber512_m4fspeedkeygen{369k}
 \def\crypto_kem_kyber512_m4fspeedkeygen_hash{283k}
 \def\crypto_kem_kyber512_m4fspeedencaps{448k}
@@ -106,7 +108,7 @@
 \def\crypto_kem_kyber1024_m4fspeeddecaps_hash_profile{72.29}
 
 % Benchmarking measurements written on 2023-09-28 07:29:35.349018+00:00; iterations=1000
-
+% with XKCP keccak
 %M4 hash profiling results for crypto_kem_kyber512_m4fspeed (type=kem)
 \def\crypto_kem_kyber512_m4fspeedkeygen{432k}
 \def\crypto_kem_kyber512_m4fspeedkeygen_hash{346k}
