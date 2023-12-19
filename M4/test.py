@@ -59,11 +59,9 @@ print(f"% Testing implementation(s) {now}\n")
 # uncomment the scheme variants that should be build and evaluated
 for scheme_path in [
         "crypto_sign/dilithium2/old",
-        # "crypto_sign/dilithium2/new",
         "crypto_sign/dilithium3/old",
-        "crypto_sign/dilithium3/new",
-        "crypto_sign/dilithium5/old",
-        # "crypto_sign/dilithium5/new"
+        "crypto_sign/dilithium3/m4plant",
+        "crypto_sign/dilithium5/old"
     ]:
     scheme_name = scheme_path.replace("/", "_")
     test(scheme_path, scheme_name)

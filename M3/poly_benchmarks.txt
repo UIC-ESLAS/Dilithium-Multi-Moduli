@@ -1,212 +1,53 @@
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 07:55:08.440705+00:00; iterations=1
-
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 07:55:57.856414+00:00; iterations=1
-
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 07:56:26.288288+00:00; iterations=1
-
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 08:04:05.784287+00:00; iterations=1
-
-%M3 results for crypto_kem_kyber512_m3 (type=kem)
-
-%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
-
-%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
-
-%M3 results for crypto_kem_kyber768_m3 (type=kem)
-
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 08:05:27.839831+00:00; iterations=1
-
-%M3 results for crypto_kem_kyber512_m3 (type=kem)
-\def\crypto_kem_kyber512_m3ntt{10\,869}
-\def\crypto_kem_kyber512_m3invntt{13\,045}
-
-%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
-\def\crypto_kem_kyber512_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber512_m3fspeedinvntt{8\,591}
-
-%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
-\def\crypto_kem_kyber512_m3fstackntt{8\,021}
-\def\crypto_kem_kyber512_m3fstackinvntt{8\,591}
-
-%M3 results for crypto_kem_kyber768_m3 (type=kem)
-\def\crypto_kem_kyber768_m3ntt{10\,869}
-\def\crypto_kem_kyber768_m3invntt{13\,045}
-
-%M3 results for crypto_kem_kyber768_m3fspeed (type=kem)
-\def\crypto_kem_kyber768_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber768_m3fspeedinvntt{8\,591}
-
-%M3 results for crypto_kem_kyber768_m3fstack (type=kem)
-\def\crypto_kem_kyber768_m3fstackntt{8\,021}
-\def\crypto_kem_kyber768_m3fstackinvntt{8\,795}
-
-%M3 results for crypto_kem_kyber1024_m3 (type=kem)
-\def\crypto_kem_kyber1024_m3ntt{10\,869}
-\def\crypto_kem_kyber1024_m3invntt{13\,045}
-
-%M3 results for crypto_kem_kyber1024_m3fspeed (type=kem)
-\def\crypto_kem_kyber1024_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber1024_m3fspeedinvntt{8\,591}
-
-%M3 results for crypto_kem_kyber1024_m3fstack (type=kem)
-\def\crypto_kem_kyber1024_m3fstackntt{8\,021}
-\def\crypto_kem_kyber1024_m3fstackinvntt{8\,795}
-
-
-% Polynomial arithmetic benchmarking measurements written on 2023-11-02 08:09:25.523380+00:00; iterations=1
-
-%M3 results for crypto_kem_kyber512_m3 (type=kem)
-\def\crypto_kem_kyber512_m3ntt{10\,869}
-\def\crypto_kem_kyber512_m3invntt{13\,044}
-\def\crypto_kem_kyber512_m3basemul{4\,819}
-
-%M3 results for crypto_kem_kyber512_m3fspeed (type=kem)
-\def\crypto_kem_kyber512_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber512_m3fspeedinvntt{8\,590}
-\def\crypto_kem_kyber512_m3fspeedpoly_basemul_opt_16_32{3\,024}
-\def\crypto_kem_kyber512_m3fspeedpoly_basemul_acc_opt_32_32{3\,919}
-\def\crypto_kem_kyber512_m3fspeedpoly_basemul_acc_opt_32_16{5\,850}
-
-%M3 results for crypto_kem_kyber512_m3fstack (type=kem)
-\def\crypto_kem_kyber512_m3fstackntt{8\,021}
-\def\crypto_kem_kyber512_m3fstackinvntt{8\,590}
-\def\crypto_kem_kyber512_m3fstackbasemul{4\,309}
-
-%M3 results for crypto_kem_kyber768_m3 (type=kem)
-\def\crypto_kem_kyber768_m3ntt{10\,869}
-\def\crypto_kem_kyber768_m3invntt{13\,044}
-\def\crypto_kem_kyber768_m3basemul{4\,819}
-
-%M3 results for crypto_kem_kyber768_m3fspeed (type=kem)
-\def\crypto_kem_kyber768_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber768_m3fspeedinvntt{8\,590}
-\def\crypto_kem_kyber768_m3fspeedpoly_basemul_opt_16_32{3\,024}
-\def\crypto_kem_kyber768_m3fspeedpoly_basemul_acc_opt_32_32{3\,919}
-\def\crypto_kem_kyber768_m3fspeedpoly_basemul_acc_opt_32_16{5\,850}
-
-%M3 results for crypto_kem_kyber768_m3fstack (type=kem)
-\def\crypto_kem_kyber768_m3fstackntt{8\,021}
-\def\crypto_kem_kyber768_m3fstackinvntt{8\,794}
-\def\crypto_kem_kyber768_m3fstackbasemul{4\,309}
-
-%M3 results for crypto_kem_kyber1024_m3 (type=kem)
-\def\crypto_kem_kyber1024_m3ntt{10\,869}
-\def\crypto_kem_kyber1024_m3invntt{13\,044}
-\def\crypto_kem_kyber1024_m3basemul{4\,819}
-
-%M3 results for crypto_kem_kyber1024_m3fspeed (type=kem)
-\def\crypto_kem_kyber1024_m3fspeedntt{8\,021}
-\def\crypto_kem_kyber1024_m3fspeedinvntt{8\,590}
-\def\crypto_kem_kyber1024_m3fspeedpoly_basemul_opt_16_32{3\,024}
-\def\crypto_kem_kyber1024_m3fspeedpoly_basemul_acc_opt_32_32{3\,919}
-\def\crypto_kem_kyber1024_m3fspeedpoly_basemul_acc_opt_32_16{5\,850}
-
-%M3 results for crypto_kem_kyber1024_m3fstack (type=kem)
-\def\crypto_kem_kyber1024_m3fstackntt{8\,021}
-\def\crypto_kem_kyber1024_m3fstackinvntt{8\,794}
-\def\crypto_kem_kyber1024_m3fstackbasemul{4\,309}
-
-%M3 results for crypto_sign_dilithium2_m3 (type=sign)
-\def\crypto_sign_dilithium2_m3ntt{33\,075}
-\def\crypto_sign_dilithium2_m3invntt{36\,660}
-\def\crypto_sign_dilithium2_m3basemul{8\,527}
-\def\crypto_sign_dilithium2_m3ntt_leaktime{19\,405}
-\def\crypto_sign_dilithium2_m3invntt_leaktime{21\,048}
-\def\crypto_sign_dilithium2_m3basemul_leaktime{4\,941}
-\def\crypto_sign_dilithium2_m3cs1_32ntt{346k}
-\def\crypto_sign_dilithium2_m3cs2_32ntt{346k}
-\def\crypto_sign_dilithium2_m3ct0_con_var_32ntt{269k}
-\def\crypto_sign_dilithium2_m3ct1_var_32ntt{213k}
-\def\crypto_sign_dilithium2_m3keccak_permute{9\,979}
+% Polynomial arithmetic benchmarking measurements written on 2023-09-25 03:55:57.736091+00:00; iterations=1000
 
 %M3 results for crypto_sign_dilithium2_m3plant (type=sign)
-\def\crypto_sign_dilithium2_m3plantntt{33\,076}
-\def\crypto_sign_dilithium2_m3plantinvntt{36\,660}
-\def\crypto_sign_dilithium2_m3plantbasemul{8\,526}
-\def\crypto_sign_dilithium2_m3plantntt_leaktime{19\,410}
-\def\crypto_sign_dilithium2_m3plantinvntt_leaktime{21\,052}
-\def\crypto_sign_dilithium2_m3plantbasemul_leaktime{4\,946}
+\def\crypto_sign_dilithium2_m3plantntt{33\,077}
+\def\crypto_sign_dilithium2_m3plantinvntt{36\,661}
+\def\crypto_sign_dilithium2_m3plantbasemul{8\,528}
+\def\crypto_sign_dilithium2_m3plantntt_leaktime{19\,405}
+\def\crypto_sign_dilithium2_m3plantinvntt_leaktime{21\,051}
+\def\crypto_sign_dilithium2_m3plantbasemul_leaktime{4\,944}
 \def\crypto_sign_dilithium2_m3plantcs1_32ntt{346k}
 \def\crypto_sign_dilithium2_m3plantcs2_32ntt{346k}
 \def\crypto_sign_dilithium2_m3plantct0_con_var_32ntt{269k}
 \def\crypto_sign_dilithium2_m3plantct1_var_32ntt{213k}
 \def\crypto_sign_dilithium2_m3plantsmall_ntt{7\,829}
 \def\crypto_sign_dilithium2_m3plantsmall_invntt{8\,542}
-\def\crypto_sign_dilithium2_m3plantsmall_point_mul{1\,300}
+\def\crypto_sign_dilithium2_m3plantsmall_point_mul{1\,299}
 \def\crypto_sign_dilithium2_m3plantsmall_asym_mul{3\,987}
-\def\crypto_sign_dilithium2_m3plantmulti_moduli_ntt{15\,615}
-\def\crypto_sign_dilithium2_m3plantmulti_moduli_ntt_precomp{18\,134}
-\def\crypto_sign_dilithium2_m3plantmulti_moduli_invntt{17\,038}
-\def\crypto_sign_dilithium2_m3plantdouble_asym_mul{8\,062}
-\def\crypto_sign_dilithium2_m3plantdouble_CRT{3\,734}
-\def\crypto_sign_dilithium2_m3plantpoly_double_basemul_invntt{28\,749}
+\def\crypto_sign_dilithium2_m3plantmulti_moduli_ntt{15\,625}
+\def\crypto_sign_dilithium2_m3plantmulti_moduli_ntt_precomp{18\,133}
+\def\crypto_sign_dilithium2_m3plantmulti_moduli_invntt{17\,036}
+\def\crypto_sign_dilithium2_m3plantdouble_asym_mul{8\,059}
+\def\crypto_sign_dilithium2_m3plantdouble_CRT{3\,736}
+\def\crypto_sign_dilithium2_m3plantpoly_double_basemul_invntt{28\,759}
 \def\crypto_sign_dilithium2_m3plantcs1_16ntt{106k}
 \def\crypto_sign_dilithium2_m3plantcs2_16ntt{106k}
 \def\crypto_sign_dilithium2_m3plantct0_multi_moduli_ntt{195k}
 \def\crypto_sign_dilithium2_m3plantkeccak_permute{9\,978}
 
-%M3 results for crypto_sign_dilithium3_m3 (type=sign)
-\def\crypto_sign_dilithium3_m3ntt{33\,076}
-\def\crypto_sign_dilithium3_m3invntt{36\,660}
-\def\crypto_sign_dilithium3_m3basemul{8\,528}
-\def\crypto_sign_dilithium3_m3ntt_leaktime{19\,407}
-\def\crypto_sign_dilithium3_m3invntt_leaktime{21\,051}
-\def\crypto_sign_dilithium3_m3basemul_leaktime{4\,943}
-\def\crypto_sign_dilithium3_m3cs1_32ntt{424k}
-\def\crypto_sign_dilithium3_m3cs2_32ntt{502k}
-\def\crypto_sign_dilithium3_m3ct0_con_var_32ntt{328k}
-\def\crypto_sign_dilithium3_m3ct1_var_32ntt{311k}
-\def\crypto_sign_dilithium3_m3keccak_permute{9\,978}
-
 %M3 results for crypto_sign_dilithium3_m3plant (type=sign)
-\def\crypto_sign_dilithium3_m3plantntt{33\,074}
-\def\crypto_sign_dilithium3_m3plantinvntt{36\,658}
-\def\crypto_sign_dilithium3_m3plantbasemul{8\,526}
-\def\crypto_sign_dilithium3_m3plantntt_leaktime{19\,413}
-\def\crypto_sign_dilithium3_m3plantinvntt_leaktime{21\,054}
-\def\crypto_sign_dilithium3_m3plantbasemul_leaktime{4\,945}
+\def\crypto_sign_dilithium3_m3plantntt{33\,077}
+\def\crypto_sign_dilithium3_m3plantinvntt{36\,661}
+\def\crypto_sign_dilithium3_m3plantbasemul{8\,528}
+\def\crypto_sign_dilithium3_m3plantntt_leaktime{19\,405}
+\def\crypto_sign_dilithium3_m3plantinvntt_leaktime{21\,051}
+\def\crypto_sign_dilithium3_m3plantbasemul_leaktime{4\,944}
 \def\crypto_sign_dilithium3_m3plantcs1_32ntt{424k}
 \def\crypto_sign_dilithium3_m3plantcs2_32ntt{502k}
 \def\crypto_sign_dilithium3_m3plantct0_con_var_32ntt{328k}
 \def\crypto_sign_dilithium3_m3plantct1_var_32ntt{311k}
 \def\crypto_sign_dilithium3_m3plantsmall_ntt{7\,830}
 \def\crypto_sign_dilithium3_m3plantsmall_invntt{8\,543}
-\def\crypto_sign_dilithium3_m3plantsmall_point_mul{1\,299}
-\def\crypto_sign_dilithium3_m3plantsmall_asym_mul{3\,988}
-\def\crypto_sign_dilithium3_m3plantmulti_moduli_ntt{15\,615}
-\def\crypto_sign_dilithium3_m3plantmulti_moduli_ntt_precomp{18\,136}
-\def\crypto_sign_dilithium3_m3plantmulti_moduli_invntt{17\,044}
-\def\crypto_sign_dilithium3_m3plantdouble_asym_mul{8\,065}
-\def\crypto_sign_dilithium3_m3plantdouble_CRT{3\,735}
-\def\crypto_sign_dilithium3_m3plantpoly_double_basemul_invntt{28\,747}
+\def\crypto_sign_dilithium3_m3plantsmall_point_mul{1\,300}
+\def\crypto_sign_dilithium3_m3plantsmall_asym_mul{3\,989}
+\def\crypto_sign_dilithium3_m3plantmulti_moduli_ntt{15\,626}
+\def\crypto_sign_dilithium3_m3plantmulti_moduli_ntt_precomp{18\,133}
+\def\crypto_sign_dilithium3_m3plantmulti_moduli_invntt{17\,038}
+\def\crypto_sign_dilithium3_m3plantdouble_asym_mul{8\,059}
+\def\crypto_sign_dilithium3_m3plantdouble_CRT{3\,736}
+\def\crypto_sign_dilithium3_m3plantpoly_double_basemul_invntt{28\,760}
 \def\crypto_sign_dilithium3_m3plantcs1_16ntt{128k}
 \def\crypto_sign_dilithium3_m3plantcs2_16ntt{150k}
 \def\crypto_sign_dilithium3_m3plantct0_multi_moduli_ntt{284k}
 \def\crypto_sign_dilithium3_m3plantkeccak_permute{9\,979}
-
-%M3 results for crypto_sign_dilithium5_m3plant (type=sign)
-\def\crypto_sign_dilithium5_m3plantntt{33\,075}
-\def\crypto_sign_dilithium5_m3plantinvntt{36\,659}
-\def\crypto_sign_dilithium5_m3plantbasemul{8\,527}
-\def\crypto_sign_dilithium5_m3plantntt_leaktime{19\,412}
-\def\crypto_sign_dilithium5_m3plantinvntt_leaktime{21\,053}
-\def\crypto_sign_dilithium5_m3plantbasemul_leaktime{4\,945}
-\def\crypto_sign_dilithium5_m3plantcs1_32ntt{580k}
-\def\crypto_sign_dilithium5_m3plantcs2_32ntt{658k}
-\def\crypto_sign_dilithium5_m3plantct0_con_var_32ntt{446k}
-\def\crypto_sign_dilithium5_m3plantct1_var_32ntt{409k}
-\def\crypto_sign_dilithium5_m3plantsmall_ntt{7\,830}
-\def\crypto_sign_dilithium5_m3plantsmall_invntt{8\,543}
-\def\crypto_sign_dilithium5_m3plantsmall_point_mul{1\,299}
-\def\crypto_sign_dilithium5_m3plantsmall_asym_mul{3\,988}
-\def\crypto_sign_dilithium5_m3plantmulti_moduli_ntt{15\,614}
-\def\crypto_sign_dilithium5_m3plantmulti_moduli_ntt_precomp{18\,137}
-\def\crypto_sign_dilithium5_m3plantmulti_moduli_invntt{17\,040}
-\def\crypto_sign_dilithium5_m3plantdouble_asym_mul{8\,064}
-\def\crypto_sign_dilithium5_m3plantdouble_CRT{3\,736}
-\def\crypto_sign_dilithium5_m3plantpoly_double_basemul_invntt{28\,738}
-\def\crypto_sign_dilithium5_m3plantcs1_16ntt{172k}
-\def\crypto_sign_dilithium5_m3plantcs2_16ntt{196k}
-\def\crypto_sign_dilithium5_m3plantct0_multi_moduli_ntt{372k}
-\def\crypto_sign_dilithium5_m3plantkeccak_permute{9\,979}
-

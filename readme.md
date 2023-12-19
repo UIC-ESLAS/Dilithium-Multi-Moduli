@@ -12,7 +12,9 @@ Authors:
  - Donglong Chen `<donglongchen@uic.edu.cn>` (Corresponding Author)
 
 
+## Setups
 The setups for testing and evaluating of our code are based on the framework provided in the [pqm3](https://github.com/mupq/pqm3) and [pqm4](https://github.com/mupq/pqm4) projects.
+
 ## Prerequisites
 
 - `arm-none-eabi-gcc`: version 10.2.1
@@ -25,8 +27,8 @@ The setups for testing and evaluating of our code are based on the framework pro
 - `keccak`: contains code for Keccak on ARMv7-M by Alexandre Adomnicăi
 - `M3`: contains code for Dilithium on ARM Cortex-M3
   - `common`: contains code that is shared between different schemes
-    - `keccak1600.S`: the proposed keccak implementation
-    - `keccak1600_XKCP.S`: the XKCP keccak implementation
+    - `keccak1600.S`: the proposed keccak implementation; Default keccak implementation. Or use `KECCAK=1` as the make configuration to use the proposed keccak implementation.
+    - `keccak1600_XKCP.S`: the XKCP keccak implementation; Use `KECCAK=0` as the make configuration to use the XKCP keccak implementation.
   - `config.py`: Saves platform configuration
   - `crypto_sign`: contains the implementations for dilithium2, dilithium3, and dilithium5
       - `dilithium2`
@@ -49,8 +51,8 @@ The setups for testing and evaluating of our code are based on the framework pro
   - `stack_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `stack.c`. The desired algorithms as well as the number of iterations can be set in the code.
 - `M4`: contains code for Dilithium on ARM Cortex-M4
   - `common`: contains code that is shared between different schemes
-    - `keccak1600.S`: the proposed keccak implementation
-    - `keccak1600_XKCP.S`: the XKCP keccak implementation
+    - `keccak1600.S`: the proposed keccak implementation; Default keccak implementation. Or use `KECCAK=1` as the make configuration to use the proposed keccak implementation.
+    - `keccak1600_XKCP.S`: the XKCP keccak implementation; Use `KECCAK=0` as the make configuration to use the XKCP keccak implementation.
   - `config.py`: Saves platform configuration
   - `crypto_sign`: contains the implementations for dilithium2, dilithium3, and dilithium5
       - `dilithium2`
@@ -78,10 +80,11 @@ The setups for testing and evaluating of our code are based on the framework pro
 ## ARM Cortex-M3
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm3](https://github.com/mupq/pqm3)'s readme.
 
-The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases.
+The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```
-make IMPLEMENTATION_PATH=crypto_{kem,sign}/{scheme}/{variant} bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
+make PLATFORM=sam3x8e KECCAK={0,1} IMPLEMENTATION_PATH=crypto_{kem,sign}/{scheme}/{variant} bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
 ```
 , where `firmware` is one of `{test, testvectors, speed, f_speed, stack}` and `variant` is the specific implementation.
 
@@ -93,7 +96,7 @@ bossac -a --erase --write --verify --boot=1 --port=/dev/ttyACM0 bin/crypto_{kem,
 For building the `test` firmware for our m3plant version of `dilithium2` the following command can be used:
 ```
 # build
-make IMPLEMENTATION_PATH=crypto_sign/dilithium2/m3plant bin/crypto_sign_dilithium2_m3plant_test.bin
+make PLATFORM=sam3x8e KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium2/m3plant bin/crypto_sign_dilithium2_m3plant_test.bin
 
 # It can the be flashed using:
 
@@ -111,10 +114,11 @@ pyserial-miniterm /dev/ttyACM0
 ## ARM Cortex-M4
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm4](https://github.com/mupq/pqm4)'s readme.
 
-The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases.
+The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```
-make IMPLEMENTATION_PATH=crypto_{kem,sign}/{scheme}/{variant} bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
+make KECCAK={0,1} IMPLEMENTATION_PATH=crypto_{kem,sign}/{scheme}/{variant} bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
 ```
 , where `firmware` is one of `{test, testvectors, speed, f_speed, stack}` and `variant` is the specific implementation.
 
@@ -126,7 +130,7 @@ st-flash --reset write bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin 0
 
 For building the `test` firmware for our new version of `dilithium3` the following command can be used:
 ```
-make IMPLEMENTATION_PATH=crypto_sign/dilithium3/new bin/crypto_sign_dilithium3_new_test.bin
+make KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium3/new bin/crypto_sign_dilithium3_new_test.bin
 
 # It can the be flashed using:
 st-flash --reset write bin/crypto_sign_dilithium3_new_test.bin 0x8000000
@@ -135,14 +139,14 @@ st-flash --reset write bin/crypto_sign_dilithium3_new_test.bin 0x8000000
 python3 read_guest.py
 ```
 
-<!-- TODO -->
+<!-- TODO
 ## Code size
 The code size of the implementation is evaluated with the `arm-none-eabi-size`.
 
 ```
 arm-none-eabi-size -t {binary_file}
 ```
-Use `code_size.py` to evaluate the code size of the specific implementation.
+Use `code_size.py` to evaluate the code size of the specific implementation. -->
 
 
 ### References
@@ -159,6 +163,10 @@ Each subdirectory containing implementations contains a LICENSE or COPYING file 
 Please cite our paper if you want to use this repository.
 
 @article{Huang2023Revisit,  
-author = {Junhao Huang, Alexandre Adomnic\u{a}i, Jipeng Zhang, Wangchen Dai, Yao Liu, Ray C. C. Cheung, \c{C}etin Kaya Ko\c{c}, and Donglong Chen},  
+author = {Junhao Huang, Alexandre Adomnic\u{a}i, Jipeng Zhang, Wangchen Dai, Yao Liu, Ray C. C. Cheung, \c{C}etin Kaya Ko\c{c}, and Donglong Chen*},  
 title = {Revisiting Keccak and Dilithium Implementations on ARMv7-M},  
-}
+journal = {{IACR} Trans. Cryptogr. Hardw. Embed. Syst.},  
+volume = {2024},  
+number = {2},  
+year = {2024}  
+}  

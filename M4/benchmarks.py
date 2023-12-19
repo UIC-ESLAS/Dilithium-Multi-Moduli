@@ -129,7 +129,7 @@ with open(f"benchmarks.txt", "a") as outfile:
     for scheme_path in [
         "crypto_sign/dilithium2/old",
         "crypto_sign/dilithium3/old",
-        "crypto_sign/dilithium3/new",
+        "crypto_sign/dilithium3/m4plant",
         "crypto_sign/dilithium5/old"
     ]:
         scheme_name = scheme_path.replace("/", "_")
