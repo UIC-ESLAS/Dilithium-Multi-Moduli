@@ -1,1 +1,0 @@
-../../kyber768/m3fspeed/symmetric-fips202.c
