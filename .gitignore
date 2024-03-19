@@ -1,6 +1,7 @@
 M3/bin
 M3/elf
 M4/bin
+M4/elf
 __pycache__/
 .vscode/
 /elf

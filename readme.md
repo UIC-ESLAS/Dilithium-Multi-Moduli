@@ -11,6 +11,11 @@ Authors:
  - Çetin Kaya Koç `<cetinkoc@ucsb.edu>`
  - Donglong Chen `<donglongchen@uic.edu.cn>` (Corresponding Author)
 
+## Clone the repository
+
+```
+git clone --recurse-submodules https://github.com/UIC-ESLAS/Dilithium-Multi-Moduli.git
+```
 
 ## Setups
 The setups for testing and evaluating of our code are based on the framework provided in the [pqm3](https://github.com/mupq/pqm3) and [pqm4](https://github.com/mupq/pqm4) projects.
@@ -93,7 +98,7 @@ It can then be flashed using:
 bossac -a --erase --write --verify --boot=1 --port=/dev/ttyACM0 bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin
 ```
 ### Example on M3
-For building the `test` firmware for our m3plant version of `dilithium2` the following command can be used:
+For building the `test` firmware for our `m3plant` version of `dilithium2` the following command can be used:
 ```
 # build
 make PLATFORM=sam3x8e KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium2/m3plant bin/crypto_sign_dilithium2_m3plant_test.bin
@@ -128,25 +133,16 @@ st-flash --reset write bin/crypto_{kem,sign}_{scheme}_{variant}_{firmware}.bin 0
 ```
 ### Example on M4
 
-For building the `test` firmware for our new version of `dilithium3` the following command can be used:
+For building the `test` firmware for our `m4plant` version of `dilithium3` the following command can be used:
 ```
-make KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium3/new bin/crypto_sign_dilithium3_new_test.bin
+make KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium3/m4plant bin/crypto_sign_dilithium3_m4plant_test.bin
 
 # It can the be flashed using:
-st-flash --reset write bin/crypto_sign_dilithium3_new_test.bin 0x8000000
+st-flash --reset write bin/crypto_sign_dilithium3_m4plant_test.bin 0x8000000
 
 # Get output:
 python3 read_guest.py
 ```
-
-<!-- TODO
-## Code size
-The code size of the implementation is evaluated with the `arm-none-eabi-size`.
-
-```
-arm-none-eabi-size -t {binary_file}
-```
-Use `code_size.py` to evaluate the code size of the specific implementation. -->
 
 
 ### References
