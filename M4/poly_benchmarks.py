@@ -22,7 +22,7 @@ def run_bench(scheme_path, scheme_name, scheme_type, iterations, nohash):
     cflags=""
     if nohash:
         cflags = "CFLAGS=-Dnohash"
-    subprocess.check_call(f"{cflags} make -j 12 IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_f_speed.bin", shell=True)
+    subprocess.check_call(f"{cflags} make -j 12 KECCAK=1 IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_f_speed.bin", shell=True)
     binary = f"bin/{scheme_name}_f_speed.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")
@@ -142,7 +142,7 @@ def bench(scheme_path, scheme_name, scheme_type, iterations, outfile, nohash, ig
     print('', file=outfile, flush=True)
 
 
-with open(f"f_benchmarks.txt", "a") as outfile:
+with open(f"poly_benchmarks.txt", "a") as outfile:
     iterations = 100  # defines the number of measurements to perform
     nohash = False  # defines if hashing should be disabled
     now = datetime.datetime.now(datetime.timezone.utc)

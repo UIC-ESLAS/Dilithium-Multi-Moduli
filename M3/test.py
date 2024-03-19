@@ -12,7 +12,7 @@ import os.path
 
 def run_test(scheme_path, scheme_name):
     subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"make PLATFORM=sam3x8e IMPLEMENTATION_PATH={scheme_path} ./bin/{scheme_name}_test.bin", shell=True)
+    subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} ./bin/{scheme_name}_test.bin", shell=True)
     binary = f"./bin/{scheme_name}_test.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")

@@ -45,14 +45,14 @@ The setups for testing and evaluating of our code are based on the framework pro
       - `dilithium5`
           - `m3plant`: Our code with the multi-moduli NTT and improved Plantard arithmetic based on the implementation in [GKS20].
           - `m3`: Code in [GKS20]
-      - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `f_benchmarks.py`.
+      - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `poly_benchmarks.py`.
       - `speed.c`: From pqm3; Firmware for benchmarking the schemes' cycle counts. Can be used by using `benchmarks.py`.
       - `stack.c`: From pqm3; Firmware for benchmarking the schemes' stack usage. Can be used by using `stack_benchmarks.py`.
       - `test.c`: From pqm3; Firmware for self-testing the schemes. Can be used by using `test.py`.
       - `testvectors.c`: From pqm3; Firmware for computing testvectors for Dilithium only.
   - `ldscripts`: Linker script for sam3x8e.
   - `benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
-  - `f_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `f_speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
+  - `poly_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `f_speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
   - `stack_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `stack.c`. The desired algorithms as well as the number of iterations can be set in the code.
 - `M4`: contains code for Dilithium on ARM Cortex-M4
   - `common`: contains code that is shared between different schemes
@@ -67,7 +67,7 @@ The setups for testing and evaluating of our code are based on the framework pro
           - `old`: Code in [AHKS22]
       - `dilithium5`
           - `old`: Code in [AHKS22]
-      - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `f_benchmarks.py`.
+      - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `poly_benchmarks.py`.
       - `speed.c`: From pqm4; Firmware for benchmarking the schemes' cycle counts. Can be used by using `benchmarks.py`.
       - `stack.c`: From pqm4; Firmware for benchmarking the schemes' stack usage. Can be used by using `stack_benchmarks.py`.
       - `test.c`: From pqm4; Firmware for self-testing the schemes. Can be used by using `test.py`.
@@ -75,7 +75,8 @@ The setups for testing and evaluating of our code are based on the framework pro
   - `gen_table`: contains code to generate the twiddle factors in Plantard domain for our implementations.
   - `Makefile`: Makefile to build the code
   - `benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
-  - `f_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `f_speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
+  - `hashing_benchmarks.py`: This script is used for building, flashing, and evaluating the hash profile produced by `hashing.c`. The desired algorithms as well as the number of iterations can be set in the code.
+  - `poly_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `f_speed.c`. The desired algorithms as well as the number of iterations can be set in the code.
   - `stack_benchmarks.py`: This script is used for building, flashing, and evaluating the outputs produced by `stack.c`. The desired algorithms as well as the number of iterations can be set in the code.
   - `stm32f405x6_full.ld`: Linker script using 128kB of memory (SRAM1 and SRAM2)
   - `stm32f405x6.ld`: Linker script using 112kB of memory (SRAM1 only)
@@ -85,7 +86,29 @@ The setups for testing and evaluating of our code are based on the framework pro
 ## ARM Cortex-M3
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm3](https://github.com/mupq/pqm3)'s readme.
 
-The scripts `benchmarks.py` and `f_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+The scripts `benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation, e.g. modifying `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)` to `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=0 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)`. To reproduce results for our implementations, the default setting `KECCAK=1` is used in these scripts.
+
+```
+# 1. Benchmark the schemes with the proposed Keccak implementation (Table 5):
+python3 benchmarks.py
+# output in benchmarks.txt
+
+# 2. Benchmark the schemes with the XKCP implementation (Table 5):
+
+# Manually modify "KECCAK=1" to "KECCAK=0" in benchmarks.py
+
+python3 benchmarks.py
+# output in benchmarks.txt
+
+# 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
+python3 poly_benchmarks.py
+
+# 4. Benchmark the arithmetic with the XKCP implementation:
+
+# Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
+
+python3 poly_benchmarks.py
+```
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```
@@ -119,7 +142,29 @@ pyserial-miniterm /dev/ttyACM0
 ## ARM Cortex-M4
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm4](https://github.com/mupq/pqm4)'s readme.
 
-The scripts `benchmarks.py` and `f_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+The scripts `hashing_benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation,  e.g modifying `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)` to `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=0 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)`. To reproduce results for our implementations, the default setting `KECCAK=1` is used in these scripts.
+
+```
+# 1. Benchmark the schemes and hash profiling with the proposed Keccak implementation (Table 6):
+python3 hashing_benchmarks.py
+# output in hashing_benchmarks.txt
+
+# 2. Benchmark the schemes and hash profiling with the XKCP implementation (Table 6):
+
+# Manually modify "KECCAK=1" to "KECCAK=0" in hashing_benchmarks.py
+
+python3 hashing_benchmarks.py
+# output in hashing_benchmarks.txt
+
+# 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
+python3 poly_benchmarks.py
+
+# 4. Benchmark the arithmetic with the XKCP implementation:
+
+# Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
+
+python3 poly_benchmarks.py
+```
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```

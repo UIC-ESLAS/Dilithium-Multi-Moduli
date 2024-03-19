@@ -25,7 +25,7 @@ def toMacro(name, value, k=None):
   return f"\\def\\{name}{{{value}}}\n"
 
 def run_bench(scheme_path, scheme_name, scheme_type):
-    subprocess.check_call(f"make PLATFORM=sam3x8e IMPLEMENTATION_PATH={scheme_path} ./bin/{scheme_name}_stack.bin", shell=True)
+    subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} ./bin/{scheme_name}_stack.bin", shell=True)
     binary = f"./bin/{scheme_name}_stack.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")

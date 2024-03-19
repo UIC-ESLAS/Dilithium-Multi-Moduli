@@ -26,7 +26,7 @@ def toMacro(name, value, k=None):
 
 def run_bench(scheme_path, scheme_name, scheme_type, iterations):
     subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"make -j 12 IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_speed.bin", shell=True)
+    subprocess.check_call(f"make -j 12 KECCAK=1 IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_speed.bin", shell=True)
     binary = f"bin/{scheme_name}_speed.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")
