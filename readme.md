@@ -1,5 +1,5 @@
 # Revisiting Keccak and Dilithium Implementations on ARMv7-M
-This repository provides code for our implementations of Keccak and Dilithium using the improved Plantard arithmetic on two ARMv7-M microprocessors: ARM Cortex-M3 and Cortex-M4.
+This repository provides codes for our implementations of Keccak and Dilithium using the multi-moduli NTTs on two ARMv7-M microprocessors: ARM Cortex-M3 and Cortex-M4.
 
 Authors: 
  - [Junhao Huang](https://github.com/JunhaoHuang) `<huangjunhao@uic.edu.cn>`
@@ -37,13 +37,13 @@ The setups for testing and evaluating of our code are based on the framework pro
   - `config.py`: Saves platform configuration
   - `crypto_sign`: contains the implementations for dilithium2, dilithium3, and dilithium5
       - `dilithium2`
-          - `m3plant`: Our code with the improved Plantard arithmetic based on the implementation in [GKS20].
+          - `m3plant`: Our code with the multi-moduli NTT and improved Plantard arithmetic based on the implementation in [GKS20].
           - `m3`: Code in [GKS20]
       - `dilithium3`
-          - `m3plant`: Our code with the improved Plantard arithmetic based on the implementation in [GKS20].
+          - `m3plant`: Our code with the multi-moduli NTT and improved Plantard arithmetic based on the implementation in [GKS20].
           - `m3`: Code in [GKS20]
       - `dilithium5`
-          - `m3plant`: Our code with the improved Plantard arithmetic based on the implementation in [GKS20].
+          - `m3plant`: Our code with the multi-moduli NTT and improved Plantard arithmetic based on the implementation in [GKS20].
           - `m3`: Code in [GKS20]
       - `f_speed.c`: Firmware used for benchmarking parts of the scheme. Can be used by using `f_benchmarks.py`.
       - `speed.c`: From pqm3; Firmware for benchmarking the schemes' cycle counts. Can be used by using `benchmarks.py`.
@@ -85,7 +85,7 @@ The setups for testing and evaluating of our code are based on the framework pro
 ## ARM Cortex-M3
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm3](https://github.com/mupq/pqm3)'s readme.
 
-The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+The scripts `benchmarks.py` and `f_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```
@@ -103,7 +103,7 @@ For building the `test` firmware for our `m3plant` version of `dilithium2` the f
 # build
 make PLATFORM=sam3x8e KECCAK={0,1} IMPLEMENTATION_PATH=crypto_sign/dilithium2/m3plant bin/crypto_sign_dilithium2_m3plant_test.bin
 
-# It can the be flashed using:
+# It can then be flashed using:
 
 bossac -a --erase --write --verify --boot=1 --port=/dev/ttyACM0 bin/crypto_sign_dilithium2_m3plant_test.bin
 
@@ -119,7 +119,7 @@ pyserial-miniterm /dev/ttyACM0
 ## ARM Cortex-M4
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm4](https://github.com/mupq/pqm4)'s readme.
 
-The scripts `benchmarks.py`, `f_benchmarks.py`, `stack.py` and `test.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
+The scripts `benchmarks.py` and `f_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation. To reproduce results for our implementations, the default setting in these scripts is used.
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
 ```
@@ -144,7 +144,6 @@ st-flash --reset write bin/crypto_sign_dilithium3_m4plant_test.bin 0x8000000
 python3 read_guest.py
 ```
 
-
 ### References
 [AHKS22] Amin Abdulrahman, Vincent Hwang, Matthias J. Kannwischer, and Amber Sprenkels. Faster Kyber and Dilithium on the Cortex-M4. In Giuseppe Ateniese and Daniele Venturi, editors, Applied Cryptography and Network Security - 20th International Conference, ACNS 2022: 853-871.  
 [GKS20] Denisa O. C. Greconici, Matthias J. Kannwischer, and Amber Sprenkels. Compact Dilithium Implementations on Cortex-M3 and Cortex-M4. IACR Transactions on Cryptographic Hardware and Embedded Systems, 2021(1):1–24, Dec. 2020. 
@@ -159,7 +158,7 @@ Each subdirectory containing implementations contains a LICENSE or COPYING file 
 Please cite our paper if you want to use this repository.
 
 @article{Huang2023Revisit,  
-author = {Junhao Huang, Alexandre Adomnic\u{a}i, Jipeng Zhang, Wangchen Dai, Yao Liu, Ray C. C. Cheung, \c{C}etin Kaya Ko\c{c}, and Donglong Chen*},  
+author = {Junhao Huang, Alexandre Adomnic\u{a}i, Jipeng Zhang, Wangchen Dai, Yao Liu, Ray C. C. Cheung, \c{C}etin Kaya Ko\c{c}, and Donglong Chen},  
 title = {Revisiting Keccak and Dilithium Implementations on ARMv7-M},  
 journal = {{IACR} Trans. Cryptogr. Hardw. Embed. Syst.},  
 volume = {2024},  
