@@ -94,20 +94,18 @@ python3 benchmarks.py
 # output in benchmarks.txt
 
 # 2. Benchmark the schemes with the XKCP implementation (Table 5):
-
 # Manually modify "KECCAK=1" to "KECCAK=0" in benchmarks.py
-
 python3 benchmarks.py
 # output in benchmarks.txt
 
 # 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
 python3 poly_benchmarks.py
+# output in poly_benchmarks.txt
 
-# 4. Benchmark the arithmetic with the XKCP implementation:
-
+# 4. Benchmark the arithmetic with the XKCP implementation (Table 2,3,4):
 # Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
-
 python3 poly_benchmarks.py
+# output in poly_benchmarks.txt
 ```
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
@@ -150,20 +148,18 @@ python3 hashing_benchmarks.py
 # output in hashing_benchmarks.txt
 
 # 2. Benchmark the schemes and hash profiling with the XKCP implementation (Table 6):
-
 # Manually modify "KECCAK=1" to "KECCAK=0" in hashing_benchmarks.py
-
 python3 hashing_benchmarks.py
 # output in hashing_benchmarks.txt
 
 # 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
 python3 poly_benchmarks.py
+# output in poly_benchmarks.txt
 
-# 4. Benchmark the arithmetic with the XKCP implementation:
-
+# 4. Benchmark the arithmetic with the XKCP implementation (Table 2,3,4):
 # Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
-
 python3 poly_benchmarks.py
+# output in poly_benchmarks.txt
 ```
 
 In case separate, manual testing is required, the binaries for a scheme can be build using
