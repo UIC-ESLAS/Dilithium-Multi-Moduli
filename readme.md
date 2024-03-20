@@ -192,7 +192,7 @@ python3 read_guest.py
 
 ### License
 
-Each subdirectory containing implementations contains a LICENSE or COPYING file stating under what license that specific implementation is released. The files in common contain licensing information at the top of the file (and are currently either public domain or MIT). All other code in this repository is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+Each subdirectory containing implementations contains a LICENSE or COPYING file stating under what license that specific implementation is released. The files in M3/commen or M4/common contain licensing information at the top of the file (and are currently either public domain or MIT). The implementations in m3plant and m4plant in this repository are licensed under the Apache License Version 2.0.
 
 ### Citation
 
