@@ -142,3 +142,29 @@
 \def\crypto_kem_kyber1024_m4fspeedencaps_hash_profile{82.46}
 \def\crypto_kem_kyber1024_m4fspeeddecaps_hash_profile{76.07}
 
+% Benchmarking measurements written on 2024-03-26 08:05:37.955722+00:00; iterations=1000
+
+% Benchmarking measurements without Keccak optimization
+
+%M4 hash profiling results for crypto_kem_kyber512_m4fspeed (type=kem)
+\def\crypto_kem_kyber512_m4fspeedkeygen{432k}
+\def\crypto_kem_kyber512_m4fspeedkeygen_hash{346k}
+\def\crypto_kem_kyber512_m4fspeedencaps{527k}
+\def\crypto_kem_kyber512_m4fspeedencaps_hash{436k}
+\def\crypto_kem_kyber512_m4fspeeddecaps{471k}
+\def\crypto_kem_kyber512_m4fspeeddecaps_hash{348k}
+\def\crypto_kem_kyber512_m4fspeedkeygen_hash_profile{80.11}
+\def\crypto_kem_kyber512_m4fspeedencaps_hash_profile{82.86}
+\def\crypto_kem_kyber512_m4fspeeddecaps_hash_profile{73.79}
+
+%M4 hash profiling results for crypto_kem_kyber768_m4fspeed (type=kem)
+\def\crypto_kem_kyber768_m4fspeedkeygen{704k}
+\def\crypto_kem_kyber768_m4fspeedkeygen_hash{556k}
+\def\crypto_kem_kyber768_m4fspeedencaps{860k}
+\def\crypto_kem_kyber768_m4fspeedencaps_hash{708k}
+\def\crypto_kem_kyber768_m4fspeeddecaps{778k}
+\def\crypto_kem_kyber768_m4fspeeddecaps_hash{582k}
+\def\crypto_kem_kyber768_m4fspeedkeygen_hash_profile{79.04}
+\def\crypto_kem_kyber768_m4fspeedencaps_hash_profile{82.39}
+\def\crypto_kem_kyber768_m4fspeeddecaps_hash_profile{74.77}
+

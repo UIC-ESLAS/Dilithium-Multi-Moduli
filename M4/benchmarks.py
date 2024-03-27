@@ -24,9 +24,9 @@ def toMacro(name, value, k=None):
   value = value.replace(",", "\\,")
   return f"\\def\\{name}{{{value}}}\n"
 
-def run_bench(scheme_path, scheme_name, scheme_type, iterations):
+def run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak):
     subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"make -j 12 KECCAK=1 IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_speed.bin", shell=True)
+    subprocess.check_call(f"make -j 12 KECCAK={keccak} IMPLEMENTATION_PATH={scheme_path} CRYPTO_ITERATIONS={iterations} bin/{scheme_name}_speed.bin", shell=True)
     binary = f"bin/{scheme_name}_speed.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")
@@ -39,10 +39,10 @@ def run_bench(scheme_path, scheme_name, scheme_type, iterations):
         print("st-flash failed --> retry")
         subprocess.check_call(
             f"st-flash erase && st-flash reset", shell=True)
-        return run_bench(scheme_path, scheme_name, scheme_type, iterations)
+        return run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
 
     # get serial output and wait for '#'
-    with serial.Serial(Settings.SERIAL_DEVICE, 115200, timeout=10) as dev:
+    with serial.Serial(Settings.SERIAL_DEVICE, 38400, timeout=10) as dev:
         logs = []
         iteration = 0
         log = b""
@@ -50,7 +50,7 @@ def run_bench(scheme_path, scheme_name, scheme_type, iterations):
             device_output = dev.read()
             if device_output == b'':
                 print("timeout --> retry")
-                return run_bench(scheme_path, scheme_name, scheme_type, iterations)
+                return run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
             sys.stdout.buffer.write(device_output)
             sys.stdout.flush()
             log += device_output
@@ -95,8 +95,8 @@ def average(results):
     return avgs
 
 
-def bench(scheme_path, scheme_name, scheme_type, iterations, outfile, ignoreErrors=False):
-    logs    = run_bench(scheme_path, scheme_name, scheme_type, iterations)
+def bench(scheme_path, scheme_name, scheme_type, iterations, keccak, outfile, ignoreErrors=False):
+    logs    = run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
     results = []
     for log in logs:
         try:
@@ -104,7 +104,7 @@ def bench(scheme_path, scheme_name, scheme_type, iterations, outfile, ignoreErro
         except:
             breakpoint()
             print("parsing log failed -> retry")
-            return bench(scheme_path, scheme_name, scheme_type, iterations, outfile)
+            return bench(scheme_path, scheme_name, scheme_type, iterations, keccak, outfile)
         results.append(result)
 
     avgResults = average(results)
@@ -126,15 +126,26 @@ with open(f"benchmarks.txt", "a") as outfile:
     subprocess.check_call(f"make clean", shell=True)
 
     # uncomment the scheme variants that should be build and evaluated
+    print(f"% Benchmarking measurements without Keccak optimization\n", file=outfile)
     for scheme_path in [
         "crypto_sign/dilithium2/old",
         "crypto_sign/dilithium3/old",
+        "crypto_sign/dilithium5/old"
+    ]:
+        scheme_name = scheme_path.replace("/", "_")
+        scheme_type = re.search('crypto_(.*?)_', scheme_name).group(1)
+        bench(scheme_path, scheme_name, scheme_type, iterations, 0, outfile)
+
+    subprocess.check_call(f"make clean", shell=True)
+    print(f"% Benchmarking measurements with Keccak optimization\n", file=outfile)
+    for scheme_path in [
+        "crypto_sign/dilithium2/old",
         "crypto_sign/dilithium3/m4plant",
         "crypto_sign/dilithium5/old"
     ]:
         scheme_name = scheme_path.replace("/", "_")
         scheme_type = re.search('crypto_(.*?)_', scheme_name).group(1)
-        bench(scheme_path, scheme_name, scheme_type, iterations, outfile)
+        bench(scheme_path, scheme_name, scheme_type, iterations, 1, outfile)
 
 
 

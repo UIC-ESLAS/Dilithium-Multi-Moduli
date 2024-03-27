@@ -33,3 +33,39 @@
 \def\crypto_sign_dilithium5_oldverify{4\,685k}
 
 
+% Benchmarking measurements written on 2024-03-26 06:25:31.798829+00:00; iterations=1000
+
+% Benchmarking measurements without Keccak optimization
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\def\crypto_sign_dilithium2_oldkeygen{1\,584k}
+\def\crypto_sign_dilithium2_oldsign{3\,959k}
+\def\crypto_sign_dilithium2_oldverify{1\,565k}
+
+%M4 results for crypto_sign_dilithium3_old (type=sign)
+\def\crypto_sign_dilithium3_oldkeygen{2\,806k}
+\def\crypto_sign_dilithium3_oldsign{6\,580k}
+\def\crypto_sign_dilithium3_oldverify{2\,683k}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\def\crypto_sign_dilithium5_oldkeygen{4\,795k}
+\def\crypto_sign_dilithium5_oldsign{8\,751k}
+\def\crypto_sign_dilithium5_oldverify{4\,685k}
+
+% Benchmarking measurements without Keccak optimization
+
+%M4 results for crypto_sign_dilithium2_old (type=sign)
+\def\crypto_sign_dilithium2_oldkeygen{1\,345k}
+\def\crypto_sign_dilithium2_oldsign{3\,461k}
+\def\crypto_sign_dilithium2_oldverify{1\,339k}
+
+%M4 results for crypto_sign_dilithium3_m4plant (type=sign)
+\def\crypto_sign_dilithium3_m4plantkeygen{2\,371k}
+\def\crypto_sign_dilithium3_m4plantsign{5\,621k}
+\def\crypto_sign_dilithium3_m4plantverify{2\,283k}
+
+%M4 results for crypto_sign_dilithium5_old (type=sign)
+\def\crypto_sign_dilithium5_oldkeygen{4\,047k}
+\def\crypto_sign_dilithium5_oldsign{7\,357k}
+\def\crypto_sign_dilithium5_oldverify{3\,970k}
+

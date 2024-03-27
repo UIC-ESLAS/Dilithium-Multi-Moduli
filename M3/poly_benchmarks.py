@@ -24,9 +24,9 @@ def toMacro(name, value, k=None):
   value = value.replace(",", "\\,")
   return f"\\def\\{name}{{{value}}}\n"
 
-def run_bench(scheme_path, scheme_name, scheme_type, iterations):
+def run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak):
     # subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_f_speed.bin", shell=True)
+    subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK={keccak} IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_f_speed.bin", shell=True)
     binary = f"./bin/{scheme_name}_f_speed.bin"
     if os.path.isfile(binary) is False:
         print("Binary does not exist")
@@ -36,7 +36,7 @@ def run_bench(scheme_path, scheme_name, scheme_type, iterations):
         subprocess.check_call(f"bossac -a --erase --write --verify --boot=1 --port=/dev/ttyACM0 ./bin/{scheme_name}_f_speed.bin", shell=True)
     except:
         print("bossac write failed --> retry")
-        return run_bench(scheme_path, scheme_name, scheme_type, iterations)
+        return run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
 
     # get serial output and wait for '#'
     with serial.Serial(Settings.SERIAL_DEVICE, 9600, timeout=1000) as dev:
@@ -47,7 +47,7 @@ def run_bench(scheme_path, scheme_name, scheme_type, iterations):
             device_output = dev.read()
             if device_output == b'':
                 print("timeout --> retry")
-                return run_bench(scheme_path, scheme_name, scheme_type, iterations)
+                return run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
             sys.stdout.buffer.write(device_output)
             sys.stdout.flush()
             log += device_output
@@ -113,8 +113,8 @@ def average(results):
     return avgs
 
 
-def bench(scheme_path, scheme_name, scheme_type, iterations, outfile, ignoreErrors=False):
-    logs    = run_bench(scheme_path, scheme_name, scheme_type, iterations)
+def bench(scheme_path, scheme_name, scheme_type, iterations, keccak, outfile, ignoreErrors=False):
+    logs    = run_bench(scheme_path, scheme_name, scheme_type, iterations, keccak)
     results = []
     for log in logs:
         try:
@@ -122,7 +122,7 @@ def bench(scheme_path, scheme_name, scheme_type, iterations, outfile, ignoreErro
         except:
             breakpoint()
             print("parsing log failed -> retry")
-            return bench(scheme_path, scheme_name, scheme_type, iterations, outfile)
+            return bench(scheme_path, scheme_name, scheme_type, iterations, keccak, outfile)
         results.append(result)
     avgResults = average(results)
     print(f"%M3 results for {scheme_name} (type={scheme_type})", file=outfile)
@@ -140,19 +140,27 @@ with open(f"poly_benchmarks.txt", "a") as outfile:
     iterations = 100 # defines the number of measurements to perform
     print(f"% Polynomial arithmetic benchmarking measurements written on {now}; iterations={iterations}\n", file=outfile)
 
-    # subprocess.check_call(f"make clean", shell=True)
+    subprocess.check_call(f"make clean", shell=True)
 
     # uncomment the scheme variants that should be build and evaluated
+    print(f"% Benchmarking measurements without Keccak optimization\n", file=outfile)
     for scheme_path in [
         "crypto_sign/dilithium2/m3",
+        "crypto_sign/dilithium3/m3"
+    ]:
+        scheme_name = scheme_path.replace("/", "_")
+        scheme_type = re.search('crypto_(.*?)_', scheme_name).group(1)
+        bench(scheme_path, scheme_name, scheme_type, iterations, 0, outfile)
+    
+    print(f"% Benchmarking measurements with Keccak optimization\n", file=outfile)
+    for scheme_path in [
         "crypto_sign/dilithium2/m3plant",
-        "crypto_sign/dilithium3/m3",
         "crypto_sign/dilithium3/m3plant",
         "crypto_sign/dilithium5/m3plant"
     ]:
         scheme_name = scheme_path.replace("/", "_")
         scheme_type = re.search('crypto_(.*?)_', scheme_name).group(1)
-        bench(scheme_path, scheme_name, scheme_type, iterations, outfile)
+        bench(scheme_path, scheme_name, scheme_type, iterations, 1, outfile)
 
 
 

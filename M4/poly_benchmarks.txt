@@ -1,62 +1,6 @@
-% Benchmarking measurements written on 2024-03-19 08:53:46.338114+00:00; iterations=100, nohash=False
-% with keccak optimizations
-%M4 results for crypto_sign_dilithium2_old (scheme_type=sign)
-\def\crypto_sign_dilithium2_old_NTT{8\,066}
-\def\crypto_sign_dilithium2_old_iNTT{8\,389}
-\def\crypto_sign_dilithium2_old_basemul{1\,931}
-\def\crypto_sign_dilithium2_old_smallNTT{5\,500}
-\def\crypto_sign_dilithium2_old_smalliNTT{5\,537}
-\def\crypto_sign_dilithium2_old_smallbasemul{1\,201}
-\def\crypto_sign_dilithium2_old_smallpointmul{1\,176}
-\def\crypto_sign_dilithium2_old_keccak{9\,413}
-\def\crypto_sign_dilithium2_oldcs1_32ntt{81\,401}
-\def\crypto_sign_dilithium2_oldcs2_32ntt{81\,396}
-\def\crypto_sign_dilithium2_oldcs1_16ntt{56\,235}
-\def\crypto_sign_dilithium2_oldcs2_16ntt{56\,251}
+% Benchmarking measurements written on 2024-03-26 08:18:34.820914+00:00; iterations=100, nohash=False
 
-%M4 results for crypto_sign_dilithium3_old (scheme_type=sign)
-\def\crypto_sign_dilithium3_old_NTT{8\,066}
-\def\crypto_sign_dilithium3_old_iNTT{8\,389}
-\def\crypto_sign_dilithium3_old_basemul{1\,931}
-\def\crypto_sign_dilithium3_old_smallNTT{5\,178}
-\def\crypto_sign_dilithium3_old_smalliNTT{5\,515}
-\def\crypto_sign_dilithium3_old_smallbasemul{1\,715}
-\def\crypto_sign_dilithium3_old_smallpointmul{1\,172}
-\def\crypto_sign_dilithium3_old_keccak{9\,415}
-\def\crypto_sign_dilithium3_oldcs1_32ntt{99\,786}
-\def\crypto_sign_dilithium3_oldcs2_32ntt{118\,086}
-\def\crypto_sign_dilithium3_oldcs1_16ntt{77\,118}
-\def\crypto_sign_dilithium3_oldcs2_16ntt{89\,706}
-
-%M4 results for crypto_sign_dilithium3_m4plant (scheme_type=sign)
-\def\crypto_sign_dilithium3_m4plant_NTT{8\,066}
-\def\crypto_sign_dilithium3_m4plant_iNTT{8\,389}
-\def\crypto_sign_dilithium3_m4plant_basemul{1\,931}
-\def\crypto_sign_dilithium3_m4plant_smallNTT{4\,456}
-\def\crypto_sign_dilithium3_m4plant_smalliNTT{4\,593}
-\def\crypto_sign_dilithium3_m4plant_smallbasemul{1\,717}
-\def\crypto_sign_dilithium3_m4plant_smallpointmul{1\,044}
-\def\crypto_sign_dilithium3_m4plant_keccak{9\,415}
-\def\crypto_sign_dilithium3_m4plantcs1_32ntt{99\,786}
-\def\crypto_sign_dilithium3_m4plantcs2_32ntt{118\,086}
-\def\crypto_sign_dilithium3_m4plantcs1_16ntt{68\,062}
-\def\crypto_sign_dilithium3_m4plantcs2_16ntt{79\,009}
-
-%M4 results for crypto_sign_dilithium5_old (scheme_type=sign)
-\def\crypto_sign_dilithium5_old_NTT{8\,066}
-\def\crypto_sign_dilithium5_old_iNTT{8\,389}
-\def\crypto_sign_dilithium5_old_basemul{1\,930}
-\def\crypto_sign_dilithium5_old_smallNTT{5\,500}
-\def\crypto_sign_dilithium5_old_smalliNTT{5\,537}
-\def\crypto_sign_dilithium5_old_smallbasemul{1\,201}
-\def\crypto_sign_dilithium5_old_smallpointmul{1\,176}
-\def\crypto_sign_dilithium5_old_keccak{9\,413}
-\def\crypto_sign_dilithium5_oldcs1_32ntt{136\,477}
-\def\crypto_sign_dilithium5_oldcs2_32ntt{160\,601}
-\def\crypto_sign_dilithium5_oldcs1_16ntt{92\,577}
-\def\crypto_sign_dilithium5_oldcs2_16ntt{107\,830}
-
-% Benchmarking measurements written on 2024-03-19 08:55:05.054617+00:00; iterations=100, nohash=False
+% Benchmarking measurements without Keccak optimization
 
 %M4 results for crypto_sign_dilithium2_old (scheme_type=sign)
 \def\crypto_sign_dilithium2_old_NTT{8\,066}
@@ -86,20 +30,6 @@
 \def\crypto_sign_dilithium3_oldcs1_16ntt{77\,117}
 \def\crypto_sign_dilithium3_oldcs2_16ntt{89\,705}
 
-%M4 results for crypto_sign_dilithium3_m4plant (scheme_type=sign)
-\def\crypto_sign_dilithium3_m4plant_NTT{8\,066}
-\def\crypto_sign_dilithium3_m4plant_iNTT{8\,389}
-\def\crypto_sign_dilithium3_m4plant_basemul{1\,931}
-\def\crypto_sign_dilithium3_m4plant_smallNTT{4\,456}
-\def\crypto_sign_dilithium3_m4plant_smalliNTT{4\,593}
-\def\crypto_sign_dilithium3_m4plant_smallbasemul{1\,717}
-\def\crypto_sign_dilithium3_m4plant_smallpointmul{1\,044}
-\def\crypto_sign_dilithium3_m4plant_keccak{11\,725}
-\def\crypto_sign_dilithium3_m4plantcs1_32ntt{99\,786}
-\def\crypto_sign_dilithium3_m4plantcs2_32ntt{118\,086}
-\def\crypto_sign_dilithium3_m4plantcs1_16ntt{68\,062}
-\def\crypto_sign_dilithium3_m4plantcs2_16ntt{79\,009}
-
 %M4 results for crypto_sign_dilithium5_old (scheme_type=sign)
 \def\crypto_sign_dilithium5_old_NTT{8\,066}
 \def\crypto_sign_dilithium5_old_iNTT{8\,388}
@@ -114,7 +44,7 @@
 \def\crypto_sign_dilithium5_oldcs1_16ntt{92\,577}
 \def\crypto_sign_dilithium5_oldcs2_16ntt{107\,830}
 
-% Benchmarking measurements written on 2024-03-19 09:02:00.905973+00:00; iterations=100, nohash=False
+% Benchmarking measurements with Keccak optimization
 
 %M4 results for crypto_sign_dilithium2_old (scheme_type=sign)
 \def\crypto_sign_dilithium2_old_NTT{8\,066}
@@ -130,19 +60,95 @@
 \def\crypto_sign_dilithium2_oldcs1_16ntt{56\,235}
 \def\crypto_sign_dilithium2_oldcs2_16ntt{56\,251}
 
+%M4 results for crypto_sign_dilithium3_m4plant (scheme_type=sign)
+\def\crypto_sign_dilithium3_m4plant_NTT{8\,066}
+\def\crypto_sign_dilithium3_m4plant_iNTT{8\,389}
+\def\crypto_sign_dilithium3_m4plant_basemul{1\,931}
+\def\crypto_sign_dilithium3_m4plant_smallNTT{4\,456}
+\def\crypto_sign_dilithium3_m4plant_smalliNTT{4\,593}
+\def\crypto_sign_dilithium3_m4plant_smallbasemul{1\,717}
+\def\crypto_sign_dilithium3_m4plant_smallpointmul{1\,044}
+\def\crypto_sign_dilithium3_m4plant_keccak{9\,415}
+\def\crypto_sign_dilithium3_m4plantcs1_32ntt{99\,786}
+\def\crypto_sign_dilithium3_m4plantcs2_32ntt{118\,086}
+\def\crypto_sign_dilithium3_m4plantcs1_16ntt{68\,062}
+\def\crypto_sign_dilithium3_m4plantcs2_16ntt{79\,009}
+
+%M4 results for crypto_sign_dilithium5_old (scheme_type=sign)
+\def\crypto_sign_dilithium5_old_NTT{8\,066}
+\def\crypto_sign_dilithium5_old_iNTT{8\,389}
+\def\crypto_sign_dilithium5_old_basemul{1\,930}
+\def\crypto_sign_dilithium5_old_smallNTT{5\,500}
+\def\crypto_sign_dilithium5_old_smalliNTT{5\,537}
+\def\crypto_sign_dilithium5_old_smallbasemul{1\,201}
+\def\crypto_sign_dilithium5_old_smallpointmul{1\,176}
+\def\crypto_sign_dilithium5_old_keccak{9\,413}
+\def\crypto_sign_dilithium5_oldcs1_32ntt{136\,477}
+\def\crypto_sign_dilithium5_oldcs2_32ntt{160\,601}
+\def\crypto_sign_dilithium5_oldcs1_16ntt{92\,577}
+\def\crypto_sign_dilithium5_oldcs2_16ntt{107\,830}
+
+% Benchmarking measurements written on 2024-03-26 08:31:26.440729+00:00; iterations=100, nohash=False
+
+% Benchmarking measurements without Keccak optimization
+
+%M4 results for crypto_sign_dilithium2_old (scheme_type=sign)
+\def\crypto_sign_dilithium2_old_NTT{8\,066}
+\def\crypto_sign_dilithium2_old_iNTT{8\,388}
+\def\crypto_sign_dilithium2_old_basemul{1\,931}
+\def\crypto_sign_dilithium2_old_smallNTT{5\,500}
+\def\crypto_sign_dilithium2_old_smalliNTT{5\,537}
+\def\crypto_sign_dilithium2_old_smallbasemul{1\,201}
+\def\crypto_sign_dilithium2_old_smallpointmul{1\,176}
+\def\crypto_sign_dilithium2_old_keccak{11\,723}
+\def\crypto_sign_dilithium2_oldcs1_32ntt{81\,400}
+\def\crypto_sign_dilithium2_oldcs2_32ntt{81\,395}
+\def\crypto_sign_dilithium2_oldcs1_16ntt{56\,235}
+\def\crypto_sign_dilithium2_oldcs2_16ntt{56\,251}
+
 %M4 results for crypto_sign_dilithium3_old (scheme_type=sign)
 \def\crypto_sign_dilithium3_old_NTT{8\,066}
 \def\crypto_sign_dilithium3_old_iNTT{8\,389}
 \def\crypto_sign_dilithium3_old_basemul{1\,931}
 \def\crypto_sign_dilithium3_old_smallNTT{5\,178}
-\def\crypto_sign_dilithium3_old_smalliNTT{5\,515}
+\def\crypto_sign_dilithium3_old_smalliNTT{5\,514}
 \def\crypto_sign_dilithium3_old_smallbasemul{1\,715}
 \def\crypto_sign_dilithium3_old_smallpointmul{1\,172}
-\def\crypto_sign_dilithium3_old_keccak{9\,415}
+\def\crypto_sign_dilithium3_old_keccak{11\,725}
 \def\crypto_sign_dilithium3_oldcs1_32ntt{99\,786}
 \def\crypto_sign_dilithium3_oldcs2_32ntt{118\,086}
-\def\crypto_sign_dilithium3_oldcs1_16ntt{77\,118}
-\def\crypto_sign_dilithium3_oldcs2_16ntt{89\,706}
+\def\crypto_sign_dilithium3_oldcs1_16ntt{77\,117}
+\def\crypto_sign_dilithium3_oldcs2_16ntt{89\,705}
+
+%M4 results for crypto_sign_dilithium5_old (scheme_type=sign)
+\def\crypto_sign_dilithium5_old_NTT{8\,066}
+\def\crypto_sign_dilithium5_old_iNTT{8\,388}
+\def\crypto_sign_dilithium5_old_basemul{1\,930}
+\def\crypto_sign_dilithium5_old_smallNTT{5\,500}
+\def\crypto_sign_dilithium5_old_smalliNTT{5\,537}
+\def\crypto_sign_dilithium5_old_smallbasemul{1\,201}
+\def\crypto_sign_dilithium5_old_smallpointmul{1\,176}
+\def\crypto_sign_dilithium5_old_keccak{11\,723}
+\def\crypto_sign_dilithium5_oldcs1_32ntt{136\,477}
+\def\crypto_sign_dilithium5_oldcs2_32ntt{160\,600}
+\def\crypto_sign_dilithium5_oldcs1_16ntt{92\,577}
+\def\crypto_sign_dilithium5_oldcs2_16ntt{107\,830}
+
+% Benchmarking measurements with Keccak optimization
+
+%M4 results for crypto_sign_dilithium2_old (scheme_type=sign)
+\def\crypto_sign_dilithium2_old_NTT{8\,066}
+\def\crypto_sign_dilithium2_old_iNTT{8\,389}
+\def\crypto_sign_dilithium2_old_basemul{1\,931}
+\def\crypto_sign_dilithium2_old_smallNTT{5\,500}
+\def\crypto_sign_dilithium2_old_smalliNTT{5\,537}
+\def\crypto_sign_dilithium2_old_smallbasemul{1\,201}
+\def\crypto_sign_dilithium2_old_smallpointmul{1\,176}
+\def\crypto_sign_dilithium2_old_keccak{9\,413}
+\def\crypto_sign_dilithium2_oldcs1_32ntt{81\,401}
+\def\crypto_sign_dilithium2_oldcs2_32ntt{81\,396}
+\def\crypto_sign_dilithium2_oldcs1_16ntt{56\,235}
+\def\crypto_sign_dilithium2_oldcs2_16ntt{56\,251}
 
 %M4 results for crypto_sign_dilithium3_m4plant (scheme_type=sign)
 \def\crypto_sign_dilithium3_m4plant_NTT{8\,066}

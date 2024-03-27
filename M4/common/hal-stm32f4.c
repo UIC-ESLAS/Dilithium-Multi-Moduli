@@ -1,7 +1,7 @@
 #include "hal.h"
 #include <sys/cdefs.h>
 
-#define SERIAL_BAUD 115200
+#define SERIAL_BAUD 38400
 
 #include <libopencm3/cm3/dwt.h>
 #include <libopencm3/cm3/nvic.h>

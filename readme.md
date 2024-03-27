@@ -86,24 +86,14 @@ The setups for testing and evaluating of our code are based on the framework pro
 ## ARM Cortex-M3
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm3](https://github.com/mupq/pqm3)'s readme.
 
-The scripts `benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [GKS20] in Table 2,3,4, and 5, `KECCAK=0` should be set for the `m3` implementation, e.g. modifying `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)` to `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=0 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)`. To reproduce results for our implementations, the default setting `KECCAK=1` is used in these scripts.
+The scripts `benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. To use the XKCP Keccak implementation in these scripts, the `KECCAK=0` configuration is used in these scripts. To reproduce results for our implementations, the `KECCAK=1` configuration is used in these scripts.
 
 ```
-# 1. Benchmark the schemes with the proposed Keccak implementation (Table 5):
+# 1. Benchmark the schemes with the proposed/XKCP Keccak implementation (Table 5):
 python3 benchmarks.py
 # output in benchmarks.txt
 
-# 2. Benchmark the schemes with the XKCP implementation (Table 5):
-# Manually modify "KECCAK=1" to "KECCAK=0" in benchmarks.py
-python3 benchmarks.py
-# output in benchmarks.txt
-
-# 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
-python3 poly_benchmarks.py
-# output in poly_benchmarks.txt
-
-# 4. Benchmark the arithmetic with the XKCP implementation (Table 2,3,4):
-# Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
+# 2. Benchmark the arithmetic with the proposed/XKCP Keccak implementation (Table 2,3,4):
 python3 poly_benchmarks.py
 # output in poly_benchmarks.txt
 ```
@@ -140,24 +130,14 @@ pyserial-miniterm /dev/ttyACM0
 ## ARM Cortex-M4
 Detailed instructions on interacting with the hardware and on installing required software can be found in [pqm4](https://github.com/mupq/pqm4)'s readme.
 
-The scripts `hashing_benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. The default Keccak implementation is the proposed Keccak implementation. To use the XKCP Keccak implementation in these scripts, one needs to manually add the `KECCAK=0` configuration in these scripts. To reproduce results for XKCP and [AHKS22] in Table 2,3,4, and 6, `KECCAK=0` should be set for the `old` implementation,  e.g modifying `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=1 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)` to `subprocess.check_call(f"make PLATFORM=sam3x8e KECCAK=0 IMPLEMENTATION_PATH={scheme_path} MUPQ_ITERATIONS={iterations} ./bin/{scheme_name}_speed.bin", shell=True)`. To reproduce results for our implementations, the default setting `KECCAK=1` is used in these scripts.
+The scripts `hashing_benchmarks.py` and `poly_benchmarks.py` cover most of the frequent use cases. To use the XKCP Keccak implementation in these scripts, the `KECCAK=0` configuration is used in these scripts. To reproduce results for our implementations, the `KECCAK=1` configuration is used in these scripts.
 
 ```
-# 1. Benchmark the schemes and hash profiling with the proposed Keccak implementation (Table 6):
+# 1. Benchmark the schemes and hash profiling with the proposed/XKCP Keccak implementation (Table 6):
 python3 hashing_benchmarks.py
 # output in hashing_benchmarks.txt
 
-# 2. Benchmark the schemes and hash profiling with the XKCP implementation (Table 6):
-# Manually modify "KECCAK=1" to "KECCAK=0" in hashing_benchmarks.py
-python3 hashing_benchmarks.py
-# output in hashing_benchmarks.txt
-
-# 3. Benchmark the arithmetic with the proposed Keccak implementation (Table 2,3,4):
-python3 poly_benchmarks.py
-# output in poly_benchmarks.txt
-
-# 4. Benchmark the arithmetic with the XKCP implementation (Table 2,3,4):
-# Manually modify "KECCAK=1" to "KECCAK=0" in poly_benchmarks.py
+# 2. Benchmark the arithmetic with the proposed Keccak/XKCP implementation (Table 2,3,4):
 python3 poly_benchmarks.py
 # output in poly_benchmarks.txt
 ```

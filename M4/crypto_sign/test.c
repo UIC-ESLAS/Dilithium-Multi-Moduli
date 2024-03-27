@@ -4,7 +4,7 @@
 #include "sendfn.h"
 #include <string.h>
 
-#define NTESTS 1
+#define NTESTS 15
 #define MLEN 32
 
 const uint8_t canary[8] = {
